@@ -1,6 +1,7 @@
 import 'package:codequiz/model/question.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'model/question.dart';
 
@@ -12,8 +13,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        brightness: Brightness.dark,
-      ),
+
+          //  brightness: Brightness.dark,
+          ),
       home: CodeQuiz(),
     );
   }
@@ -67,19 +69,18 @@ class _State extends State<CodeQuiz> {
     Question.name(
         'A do-while loop is used to ensure that the statements within the loop are executed at least twice.',
         false),
+    Question.name('In Java arrays are Objects.', true),
     Question.name(
-      'In JAVA arrays are Objects',
-       true),
-    Question.name('Passing an array in method , the method receives it as the reference of that array',
-     true),
-    
+        'Passing an array in method , the method receives it as the reference of that array.',
+        true),
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-//        backgroundColor: Color(0xFF258083),
-        title: Text('Code Quiz'),
+        backgroundColor: Color(0xFF258083),
+        title: Text('Code Quiz', style:  TextStyle(fontSize: 30,
+        ),),
         centerTitle: true,
       ),
 //      backgroundColor: Color(0xff258083),
@@ -91,7 +92,7 @@ class _State extends State<CodeQuiz> {
               Center(
                 child: Image.asset(
                   'images/11.png',
-                  height: 250,
+                  height: 300,
                   width: 500,
                 ),
               ),
@@ -99,11 +100,18 @@ class _State extends State<CodeQuiz> {
                 padding: const EdgeInsets.all(20.0),
                 child: Container(
                   decoration: BoxDecoration(
-                      color: Colors.white,
+                      boxShadow: [
+                        BoxShadow(
+                            offset: Offset(3, 6),
+                            blurRadius: 10,
+                            color: Colors.grey,
+                            spreadRadius: 2)
+                      ],
+                      color: Colors.blueGrey,
                       borderRadius: BorderRadius.circular(20.0),
                       border: Border.all(
-                        style: BorderStyle.solid,
-                        color: Color(0xFF21878B),
+                     //   style: BorderStyle.solid,
+                        color: Colors.white24,
                       )),
                   height: 150.0,
                   child: Center(
@@ -114,7 +122,7 @@ class _State extends State<CodeQuiz> {
                           .questionText,
                       style: TextStyle(
                         fontFamily: 'Ubuntu',
-                        color: Colors.black54,
+                        color: Colors.white,
                         fontSize: 20.0,
                         fontWeight: FontWeight.bold,
                       ),
@@ -130,7 +138,7 @@ class _State extends State<CodeQuiz> {
                     onPressed: () => _preQuestion(),
                     child: Icon(
                       Icons.arrow_left,
-
+                      color: Colors.white70,
                     ),
                   ),
                   RaisedButton(
@@ -147,17 +155,20 @@ class _State extends State<CodeQuiz> {
                   RaisedButton(
                     color: Color(0xFFA0766E),
                     onPressed: () => _checkAnswer(false, context),
-                    child: Text('FALSE',
+                    child: Text(
+                      'FALSE',
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 18.0,
-                      ),),
+                      ),
+                    ),
                   ),
                   RaisedButton(
                       color: Color(0xFFA0766E),
                       onPressed: () => _nextQuestion(),
                       child: Icon(
                         Icons.arrow_right,
+                        color: Colors.white70,
                       )),
                 ],
               ),
