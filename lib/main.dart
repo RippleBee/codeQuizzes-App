@@ -2,6 +2,8 @@ import 'package:codequiz/model/question.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'model/question.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -65,6 +67,12 @@ class _State extends State<CodeQuiz> {
     Question.name(
         'A do-while loop is used to ensure that the statements within the loop are executed at least twice.',
         false),
+    Question.name(
+      'In JAVA arrays are Objects',
+       true),
+    Question.name('Passing an array in method , the method receives it as the reference of that array',
+     true),
+    
   ];
   @override
   Widget build(BuildContext context) {
