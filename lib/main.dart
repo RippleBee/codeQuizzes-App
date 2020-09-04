@@ -79,9 +79,9 @@ class _State extends State<CodeQuiz> {
       appBar: AppBar(
         backgroundColor: Color(0xFF258083),
         title: Text(
-          'Code Quiz',
+          'CodeQuiz',
           style: TextStyle(
-            fontSize: 30,
+          fontSize: 30,
           ),
         ),
         centerTitle: true,
@@ -94,14 +94,17 @@ class _State extends State<CodeQuiz> {
             children: <Widget>[
               Center(
                 child: Image.asset(
-                  'images/11.png',
+                  'images/coder.png',
                   height: 300,
-                  width: 500,
+                  width: 300,
                 ),
               ),
+              
               Padding(
+                
                 padding: const EdgeInsets.all(20.0),
                 child: Container(
+                  
                   decoration: BoxDecoration(
                       boxShadow: [
                         BoxShadow(
