@@ -1,7 +1,6 @@
 import 'package:codequiz/model/question.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'model/question.dart';
 
@@ -80,10 +79,11 @@ class _State extends State<CodeQuiz> {
       appBar: AppBar(
         backgroundColor: Color(0xFF258083),
         title: Text('Code Quiz', style:  TextStyle(fontSize: 30,
-        ),),
-        centerTitle: true,
+        ),
       ),
-//      backgroundColor: Color(0xff258083),
+      centerTitle: true,
+      ),
+     backgroundColor: Colors.red[50],
       body: Builder(
         builder: (BuildContext context) => Container(
           child: Column(
@@ -135,6 +135,7 @@ class _State extends State<CodeQuiz> {
                 children: <Widget>[
                   RaisedButton(
                     color: Color(0xFFA0766E),
+                    
                     onPressed: () => _preQuestion(),
                     child: Icon(
                       Icons.arrow_left,
