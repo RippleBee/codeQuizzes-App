@@ -78,12 +78,15 @@ class _State extends State<CodeQuiz> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xFF258083),
-        title: Text('Code Quiz', style:  TextStyle(fontSize: 30,
+        title: Text(
+          'Code Quiz',
+          style: TextStyle(
+            fontSize: 30,
+          ),
         ),
+        centerTitle: true,
       ),
-      centerTitle: true,
-      ),
-     backgroundColor: Colors.red[50],
+      backgroundColor: Colors.red[50],
       body: Builder(
         builder: (BuildContext context) => Container(
           child: Column(
@@ -110,7 +113,7 @@ class _State extends State<CodeQuiz> {
                       color: Colors.blueGrey,
                       borderRadius: BorderRadius.circular(20.0),
                       border: Border.all(
-                     //   style: BorderStyle.solid,
+                        //   style: BorderStyle.solid,
                         color: Colors.white24,
                       )),
                   height: 150.0,
@@ -133,44 +136,109 @@ class _State extends State<CodeQuiz> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-                  RaisedButton(
-                    color: Color(0xFFA0766E),
-                    
-                    onPressed: () => _preQuestion(),
-                    child: Icon(
-                      Icons.arrow_left,
-                      color: Colors.white70,
-                    ),
-                  ),
-                  RaisedButton(
-                    color: Color(0xFFA0766E),
-                    onPressed: () => _checkAnswer(true, context),
-                    child: Text(
-                      'TRUE',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 18.0,
-                      ),
-                    ),
-                  ),
-                  RaisedButton(
-                    color: Color(0xFFA0766E),
-                    onPressed: () => _checkAnswer(false, context),
-                    child: Text(
-                      'FALSE',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 18.0,
-                      ),
-                    ),
-                  ),
-                  RaisedButton(
+                  Container(
+                    height: 40,
+                    decoration: BoxDecoration(
+                        boxShadow: [
+                          BoxShadow(
+                              offset: Offset(2, 5),
+                              blurRadius: 10,
+                              color: Color(0xFFA0766E),
+                              spreadRadius: 2)
+                        ],
+                        borderRadius: BorderRadius.circular(0.0),
+                        border: Border.all(
+                          //  style: BorderStyle.solid,
+                          color: Colors.white24,
+                        )),
+                    child: RaisedButton(
                       color: Color(0xFFA0766E),
-                      onPressed: () => _nextQuestion(),
+                      onPressed: () => _preQuestion(),
                       child: Icon(
-                        Icons.arrow_right,
+                        Icons.arrow_left,
                         color: Colors.white70,
-                      )),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    height: 40,
+                    decoration: BoxDecoration(
+                        boxShadow: [
+                          BoxShadow(
+                              offset: Offset(2, 5),
+                              blurRadius: 10,
+                              color: Color(0xFFA0766E),
+                              spreadRadius: 2)
+                        ],
+                        borderRadius: BorderRadius.circular(0.0),
+                        border: Border.all(
+                          //  style: BorderStyle.solid,
+                          color: Colors.white24,
+                        )),
+                    child: Container(
+                      child: RaisedButton(
+                        color: Color(0xFFA0766E),
+                        onPressed: () => _checkAnswer(true, context),
+                        child: Text(
+                          'TRUE',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 18.0,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    height: 40,
+                    decoration: BoxDecoration(
+                        boxShadow: [
+                          BoxShadow(
+                              offset: Offset(2, 5),
+                              blurRadius: 10,
+                              color: Color(0xFFA0766E),
+                              spreadRadius: 2)
+                        ],
+                        borderRadius: BorderRadius.circular(0.0),
+                        border: Border.all(
+                          //  style: BorderStyle.solid,
+                          color: Colors.white24,
+                        )),
+                    child: RaisedButton(
+                      color: Color(0xFFA0766E),
+                      onPressed: () => _checkAnswer(false, context),
+                      child: Text(
+                        'FALSE',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18.0,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    height: 40,
+                    decoration: BoxDecoration(
+                        boxShadow: [
+                          BoxShadow(
+                              offset: Offset(2, 5),
+                              blurRadius: 10,
+                              color: Color(0xFFA0766E),
+                              spreadRadius: 2)
+                        ],
+                        borderRadius: BorderRadius.circular(0.0),
+                        border: Border.all(
+                          //  style: BorderStyle.solid,
+                          color: Colors.white24,
+                        )),
+                    child: RaisedButton(
+                        color: Color(0xFFA0766E),
+                        onPressed: () => _nextQuestion(),
+                        child: Icon(
+                          Icons.arrow_right,
+                          color: Colors.white70,
+                        )),
+                  ),
                 ],
               ),
               Spacer(),
