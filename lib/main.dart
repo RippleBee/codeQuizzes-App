@@ -92,156 +92,16 @@ class _State extends State<CodeQuiz> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Center(
-                child: Image.asset(
-                  'images/coder.png',
-                  height: 300,
-                  width: 300,
-                ),
-              ),
+              avatar(),
               
-              Padding(
-                
-                padding: const EdgeInsets.all(20.0),
-                child: Container(
-                  
-                  decoration: BoxDecoration(
-                      boxShadow: [
-                        BoxShadow(
-                            offset: Offset(3, 6),
-                            blurRadius: 10,
-                            color: Colors.grey,
-                            spreadRadius: 2)
-                      ],
-                      color: Colors.blueGrey,
-                      borderRadius: BorderRadius.circular(20.0),
-                      border: Border.all(
-                        //   style: BorderStyle.solid,
-                        color: Colors.white24,
-                      )),
-                  height: 150.0,
-                  child: Center(
-                      child: Padding(
-                    padding: const EdgeInsets.all(20.0),
-                    child: Text(
-                      questionBank[_currentIndex % questionBank.length]
-                          .questionText,
-                      style: TextStyle(
-                        fontFamily: 'Ubuntu',
-                        color: Colors.white,
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  )),
-                ),
-              ),
+              question(),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-                  Container(
-                    height: 40,
-                    decoration: BoxDecoration(
-                        boxShadow: [
-                          BoxShadow(
-                              offset: Offset(2, 5),
-                              blurRadius: 10,
-                              color: Color(0xFFA0766E),
-                              spreadRadius: 2)
-                        ],
-                        borderRadius: BorderRadius.circular(0.0),
-                        border: Border.all(
-                          //  style: BorderStyle.solid,
-                          color: Colors.white24,
-                        )),
-                    child: RaisedButton(
-                      color: Color(0xFFA0766E),
-                      onPressed: () => _preQuestion(),
-                      child: Icon(
-                        Icons.arrow_left,
-                        color: Colors.white70,
-                      ),
-                    ),
-                  ),
-                  Container(
-                    height: 40,
-                    decoration: BoxDecoration(
-                        boxShadow: [
-                          BoxShadow(
-                              offset: Offset(2, 5),
-                              blurRadius: 10,
-                              color: Color(0xFFA0766E),
-                              spreadRadius: 2)
-                        ],
-                        borderRadius: BorderRadius.circular(0.0),
-                        border: Border.all(
-                          //  style: BorderStyle.solid,
-                          color: Colors.white24,
-                        )),
-                    child: Container(
-                      child: RaisedButton(
-                        color: Color(0xFFA0766E),
-                        onPressed: () => _checkAnswer(true, context),
-                        child: Text(
-                          'TRUE',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18.0,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    height: 40,
-                    decoration: BoxDecoration(
-                        boxShadow: [
-                          BoxShadow(
-                              offset: Offset(2, 5),
-                              blurRadius: 10,
-                              color: Color(0xFFA0766E),
-                              spreadRadius: 2)
-                        ],
-                        borderRadius: BorderRadius.circular(0.0),
-                        border: Border.all(
-                          //  style: BorderStyle.solid,
-                          color: Colors.white24,
-                        )),
-                    child: RaisedButton(
-                      color: Color(0xFFA0766E),
-                      onPressed: () => _checkAnswer(false, context),
-                      child: Text(
-                        'FALSE',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 18.0,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    height: 40,
-                    decoration: BoxDecoration(
-                        boxShadow: [
-                          BoxShadow(
-                              offset: Offset(2, 5),
-                              blurRadius: 10,
-                              color: Color(0xFFA0766E),
-                              spreadRadius: 2)
-                        ],
-                        borderRadius: BorderRadius.circular(0.0),
-                        border: Border.all(
-                          //  style: BorderStyle.solid,
-                          color: Colors.white24,
-                        )),
-                    child: RaisedButton(
-                        color: Color(0xFFA0766E),
-                        onPressed: () => _nextQuestion(),
-                        child: Icon(
-                          Icons.arrow_right,
-                          color: Colors.white70,
-                        )),
-                  ),
+                  preQuestion(),
+                  chechkAnswerTrue(context),
+                  checkAnswerFalse(context),
+                  nextQuestion(),
                 ],
               ),
               Spacer(),
@@ -250,6 +110,172 @@ class _State extends State<CodeQuiz> {
         ),
       ),
     );
+  }
+
+  
+
+  Container nextQuestion() {
+    return Container(
+                  height: 40,
+                  decoration: BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                            offset: Offset(2, 5),
+                            blurRadius: 10,
+                            color: Color(0xFFA0766E),
+                            spreadRadius: 2)
+                      ],
+                      borderRadius: BorderRadius.circular(0.0),
+                      border: Border.all(
+                        //  style: BorderStyle.solid,
+                        color: Colors.white24,
+                      )),
+                  child: RaisedButton(
+                      color: Color(0xFFA0766E),
+                      onPressed: () => _nextQuestion(),
+                      child: Icon(
+                        Icons.arrow_right,
+                        color: Colors.white70,
+                      )),
+                );
+  }
+
+  Container checkAnswerFalse(BuildContext context) {
+    return Container(
+                  height: 40,
+                  decoration: BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                            offset: Offset(2, 5),
+                            blurRadius: 10,
+                            color: Color(0xFFA0766E),
+                            spreadRadius: 2)
+                      ],
+                      borderRadius: BorderRadius.circular(0.0),
+                      border: Border.all(
+                        //  style: BorderStyle.solid,
+                        color: Colors.white24,
+                      )),
+                  child: RaisedButton(
+                    color: Color(0xFFA0766E),
+                    onPressed: () => _checkAnswer(false, context),
+                    child: Text(
+                      'FALSE',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18.0,
+                      ),
+                    ),
+                  ),
+                );
+  }
+
+  Container chechkAnswerTrue(BuildContext context) {
+    return Container(
+                  height: 40,
+                  decoration: BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                            offset: Offset(2, 5),
+                            blurRadius: 10,
+                            color: Color(0xFFA0766E),
+                            spreadRadius: 2)
+                      ],
+                      borderRadius: BorderRadius.circular(0.0),
+                      border: Border.all(
+                        //  style: BorderStyle.solid,
+                        color: Colors.white24,
+                      )),
+                  child: Container(
+                    child: RaisedButton(
+                      color: Color(0xFFA0766E),
+                      onPressed: () => _checkAnswer(true, context),
+                      child: Text(
+                        'TRUE',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18.0,
+                        ),
+                      ),
+                    ),
+                  ),
+                );
+  }
+
+  Container preQuestion() {
+    return Container(
+                  height: 40,
+                  decoration: BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                            offset: Offset(2, 5),
+                            blurRadius: 10,
+                            color: Color(0xFFA0766E),
+                            spreadRadius: 2)
+                      ],
+                      borderRadius: BorderRadius.circular(0.0),
+                      border: Border.all(
+                        //  style: BorderStyle.solid,
+                        color: Colors.white24,
+                      )),
+                  child: RaisedButton(
+                    color: Color(0xFFA0766E),
+                    onPressed: () => _preQuestion(),
+                    child: Icon(
+                      Icons.arrow_left,
+                      color: Colors.white70,
+                    ),
+                  ),
+                );
+  }
+
+  Padding question() {
+    return Padding(
+
+              padding: const EdgeInsets.all(20.0),
+              child: Container(
+                
+                decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                          offset: Offset(3, 6),
+                          blurRadius: 10,
+                          color: Colors.grey,
+                          spreadRadius: 2)
+                    ],
+                    color: Colors.blueGrey,
+                    borderRadius: BorderRadius.circular(20.0),
+                    border: Border.all(
+                      //   style: BorderStyle.solid,
+                      color: Colors.white24,
+                    )),
+                height: 140.0,
+                child: Center(
+                    child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Text(
+                    questionBank[_currentIndex % questionBank.length]
+                        .questionText,
+                    style: TextStyle(
+                      fontFamily: 'Ubuntu',
+                      color: Colors.white,
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                )),
+              ),
+            );
+  }
+
+  Center avatar() {
+    return Center(
+              child: Image.asset(
+                'images/coder.png',
+                height: 300,
+                width: 300,
+              ),
+            );
   }
 
   _checkAnswer(bool ansChoice, BuildContext context) {
