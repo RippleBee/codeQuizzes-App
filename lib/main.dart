@@ -79,6 +79,7 @@ class _State extends State<CodeQuiz> {
           style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
+        elevation: 19,
       ),
       // backgroundColor: Colors.red[50],
       body: Container(
@@ -137,7 +138,8 @@ class _State extends State<CodeQuiz> {
           onPressed: () => _nextQuestion(),
           child: Icon(
             Icons.arrow_right,
-            color: Colors.white70,
+            color: Colors.white,
+            
           )),
     );
   }
@@ -165,7 +167,8 @@ class _State extends State<CodeQuiz> {
           'FALSE',
           style: TextStyle(
             color: Colors.white,
-            fontSize: 18.0,
+            fontSize: 19.0,
+            fontWeight: FontWeight.bold,
           ),
         ),
       ),
@@ -197,6 +200,7 @@ class _State extends State<CodeQuiz> {
             style: TextStyle(
               color: Colors.white,
               fontSize: 18.0,
+              fontWeight: FontWeight.bold,
             ),
           ),
         ),
@@ -213,7 +217,7 @@ class _State extends State<CodeQuiz> {
                 offset: Offset(5, 6),
                 blurRadius: 10,
                 color: Color(0xFFA0766E),
-                spreadRadius: 1,
+                spreadRadius: 2,
             )
           ],
           borderRadius: BorderRadius.circular(0.0),
@@ -226,7 +230,7 @@ class _State extends State<CodeQuiz> {
         onPressed: () => _preQuestion(),
         child: Icon(
           Icons.arrow_left,
-          color: Colors.white70,
+          color: Colors.white,
         ),
       ),
     );
@@ -240,20 +244,21 @@ class _State extends State<CodeQuiz> {
             boxShadow: [
               BoxShadow(
                   offset: Offset(3, 6),
-                  blurRadius: 10,
-                  color: Colors.grey,
-                  spreadRadius: 2)
+                  blurRadius: 12,
+                  color: Color(0xFF691844),
+                  spreadRadius: 2
+              )
             ],
-            color: Colors.blueGrey,
+            color: Color(0xFF7691844),
             borderRadius: BorderRadius.circular(20.0),
             border: Border.all(
               //   style: BorderStyle.solid,
-              color: Colors.white24,
+               color: Color(0xFF691844),
             )),
         height: 140.0,
         child: Center(
           child: Padding(
-          padding: const EdgeInsets.all(10.0),
+          padding: EdgeInsets.all(10.0),
           child: Text(
             questionBank[_currentIndex % questionBank.length].questionText,
             style: TextStyle(
