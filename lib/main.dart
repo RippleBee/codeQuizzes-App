@@ -1,7 +1,6 @@
 import 'package:codequiz/model/question.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import 'model/question.dart';
 
 void main() => runApp(MyApp());
@@ -11,12 +10,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-      ),
+      theme: ThemeData(),
       home: CodeQuiz(),
     );
   }
-
 }
 
 class CodeQuiz extends StatefulWidget {
@@ -76,240 +73,244 @@ class _State extends State<CodeQuiz> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-              backgroundColor: Colors.purple[200],
-              title: Text(
-                'CodeQuiz',
-                style: TextStyle(
-                fontSize: 30,
-                fontWeight: FontWeight.bold
-                ),
+        backgroundColor: Color(0xFFaf5b4e ),
+        title: Text(
+          'CodeQuiz',
+          style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+        ),
+        centerTitle: true,
+      ),
+      // backgroundColor: Colors.red[50],
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [Color(0xFFFFEFBA),Color(0xFFeaafc8)],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight
+          )
+        ),
+        child: SafeArea(
+          child: Builder(
+            builder: (BuildContext context) => Container(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  avatar(),
+                  question(),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      preQuestion(),
+                      chechkAnswerTrue(context),
+                      checkAnswerFalse(context),
+                      nextQuestion(),
+                    ],
+                  ),
+                  Spacer(),
+                ],
               ),
-              centerTitle: true,
             ),
-            backgroundColor: Colors.red[50],
-            body: Builder(
-              builder: (BuildContext context) => Container(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    avatar(),
-                    
-                    question(),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: <Widget>[
-                        preQuestion(),
-                        chechkAnswerTrue(context),
-                        checkAnswerFalse(context),
-                        nextQuestion(),
-                      ],
-                    ),
-                    Spacer(),
-                  ],
-                ),
-              ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Container nextQuestion() {
+    return Container(
+      height: 40,
+      decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+                offset: Offset(2, 5),
+                blurRadius: 10,
+                color: Color(0xFFA0766E),
+                spreadRadius: 2)
+          ],
+          borderRadius: BorderRadius.circular(0.0),
+          border: Border.all(
+            //  style: BorderStyle.solid,
+            color: Colors.white24,
+          )),
+      child: RaisedButton(
+          color: Color(0xFF494b68),
+          onPressed: () => _nextQuestion(),
+          child: Icon(
+            Icons.arrow_right,
+            color: Colors.white70,
+          )),
+    );
+  }
+
+  Container checkAnswerFalse(BuildContext context) {
+    return Container(
+      height: 40,
+      decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+                offset: Offset(2, 5),
+                blurRadius: 10,
+                color: Color(0xFFA0766E),
+                spreadRadius: 2)
+          ],
+          borderRadius: BorderRadius.circular(0.0),
+          border: Border.all(
+            //  style: BorderStyle.solid,
+            color: Colors.white24,
+          )),
+      child: RaisedButton(
+        color: Color(0xFF494b68),
+        onPressed: () => _checkAnswer(false, context),
+        child: Text(
+          'FALSE',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 18.0,
+          ),
+        ),
+      ),
+    );
+  }
+
+  Container chechkAnswerTrue(BuildContext context) {
+    return Container(
+      height: 40,
+      decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+                offset: Offset(2, 5),
+                blurRadius: 10,
+                color: Color(0xFFA0766E),
+                spreadRadius: 2)
+          ],
+          borderRadius: BorderRadius.circular(0.0),
+          border: Border.all(
+            //  style: BorderStyle.solid,
+            color: Colors.white24,
+          )),
+      child: Container(
+        child: RaisedButton(
+          color: Color(0xFF494b68),
+          onPressed: () => _checkAnswer(true, context),
+          child: Text(
+            'TRUE',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 18.0,
             ),
-          );
-        }
-      
-        Container nextQuestion() {
-          return Container(
-                        height: 40,
-                        decoration: BoxDecoration(
-                            boxShadow: [
-                              BoxShadow(
-                                  offset: Offset(2, 5),
-                                  blurRadius: 10,
-                                  color: Color(0xFFA0766E),
-                                  spreadRadius: 2)
-                            ],
-                            borderRadius: BorderRadius.circular(0.0),
-                            border: Border.all(
-                              //  style: BorderStyle.solid,
-                              color: Colors.white24,
-                            )),
-                        child: RaisedButton(
-                            color: Color(0xFFA0766E),
-                            onPressed: () => _nextQuestion(),
-                            child: Icon(
-                              Icons.arrow_right,
-                              color: Colors.white70,
-                            )),
-                      );
-        }
-      
-        Container checkAnswerFalse(BuildContext context) {
-          return Container(
-                        height: 40,
-                        decoration: BoxDecoration(
-                            boxShadow: [
-                              BoxShadow(
-                                  offset: Offset(2, 5),
-                                  blurRadius: 10,
-                                  color: Color(0xFFA0766E),
-                                  spreadRadius: 2)
-                            ],
-                            borderRadius: BorderRadius.circular(0.0),
-                            border: Border.all(
-                              //  style: BorderStyle.solid,
-                              color: Colors.white24,
-                            )),
-                        child: RaisedButton(
-                          color: Color(0xFFA0766E),
-                          onPressed: () => _checkAnswer(false, context),
-                          child: Text(
-                            'FALSE',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 18.0,
-                            ),
-                          ),
-                        ),
-                      );
-        }
-      
-        Container chechkAnswerTrue(BuildContext context) {
-          return Container(
-                        height: 40,
-                        decoration: BoxDecoration(
-                            boxShadow: [
-                              BoxShadow(
-                                  offset: Offset(2, 5),
-                                  blurRadius: 10,
-                                  color: Color(0xFFA0766E),
-                                  spreadRadius: 2)
-                            ],
-                            borderRadius: BorderRadius.circular(0.0),
-                            border: Border.all(
-                              //  style: BorderStyle.solid,
-                              color: Colors.white24,
-                            )),
-                        child: Container(
-                          child: RaisedButton(
-                            color: Color(0xFFA0766E),
-                            onPressed: () => _checkAnswer(true, context),
-                            child: Text(
-                              'TRUE',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 18.0,
-                              ),
-                            ),
-                          ),
-                        ),
-                      );
-        }
-      
-        Container preQuestion() {
-          return Container(
-                        height: 40,
-                        decoration: BoxDecoration(
-                            boxShadow: [
-                              BoxShadow(
-                                  offset: Offset(5,6),
-                                  blurRadius: 10,
-                                  color: Color(0xFFA0766E),
-                                  spreadRadius: 1)
-                            ],
-                            borderRadius: BorderRadius.circular(0.0),
-                            border: Border.all(
-                              // style: BorderStyle.solid,
-                              color: Colors.white24,
-                            )),
-                        child: RaisedButton(
-                          color: Color(0xFFA0766E),
-                          onPressed: () => _preQuestion(),
-                          child: Icon(
-                            Icons.arrow_left,
-                            color: Colors.white70,
-                          ),
-                        ),
-                      );
-        }
-      
-        Padding question() {
-          return Padding(
-      
-                    padding: const EdgeInsets.all(20.0),
-                    child: Container(
-                      
-                      decoration: BoxDecoration(
-                          boxShadow: [
-                            BoxShadow(
-                                offset: Offset(3, 6),
-                                blurRadius: 10,
-                                color: Colors.grey,
-                                spreadRadius: 2)
-                          ],
-                          color: Colors.blueGrey,
-                          borderRadius: BorderRadius.circular(20.0),
-                          border: Border.all(
-                            //   style: BorderStyle.solid,
-                            color: Colors.white24,
-                          )),
-                      height: 140.0,
-                      child: Center(
-                          child: Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Text(
-                          questionBank[_currentIndex % questionBank.length]
-                              .questionText,
-                          style: TextStyle(
-                            fontFamily: 'Ubuntu',
-                            color: Colors.white,
-                            fontSize: 20.0,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      )),
-                    ),
-                  );
-        }
-      
-        Center avatar() {
-          return Center(
-                    child: Image.asset(
-                      'images/coder.png',
-                      height: 300,
-                      width: 300,
-                    ),
-                  );
-        }
-      
-        _checkAnswer(bool ansChoice, BuildContext context) {
-          if (ansChoice == questionBank[_currentIndex].isCorrect) {
-            setState(() {
-              _currentIndex = (_currentIndex + 1) % questionBank.length;
-            });
-            debugPrint('yes correct');
-            final snackBar = SnackBar(
-              backgroundColor: Colors.teal,
-              duration: Duration(milliseconds: 500),
-              content: Text('Correct'),
-            );
-            Scaffold.of(context).showSnackBar(snackBar);
-          } else {
-            debugPrint('incorrect');
-            final snackBar = SnackBar(
-              backgroundColor: Colors.teal,
-              duration: Duration(milliseconds: 500),
-              content: Text('Wrong'),
-            );
-            Scaffold.of(context).showSnackBar(snackBar);
-          }
-        }
-      
-        _nextQuestion() {
-          setState(() {
-            _currentIndex++;
-          });
-        }
-      
-        _preQuestion() {
-          setState(() {
-            _currentIndex--;
-          });
-        }
-      
-        buildDarkTheme() {}
+          ),
+        ),
+      ),
+    );
+  }
+
+  Container preQuestion() {
+    return Container(
+      height: 40,
+      decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+                offset: Offset(5, 6),
+                blurRadius: 10,
+                color: Color(0xFFA0766E),
+                spreadRadius: 1,
+            )
+          ],
+          borderRadius: BorderRadius.circular(0.0),
+          border: Border.all(
+            // style: BorderStyle.solid,
+            color: Colors.white24,
+          )),
+      child: RaisedButton(
+        color: Color(0xFF494b68),
+        onPressed: () => _preQuestion(),
+        child: Icon(
+          Icons.arrow_left,
+          color: Colors.white70,
+        ),
+      ),
+    );
+  }
+
+  Padding question() {
+    return Padding(
+      padding: const EdgeInsets.all(20.0),
+      child: Container(
+        decoration: BoxDecoration(
+            boxShadow: [
+              BoxShadow(
+                  offset: Offset(3, 6),
+                  blurRadius: 10,
+                  color: Colors.grey,
+                  spreadRadius: 2)
+            ],
+            color: Colors.blueGrey,
+            borderRadius: BorderRadius.circular(20.0),
+            border: Border.all(
+              //   style: BorderStyle.solid,
+              color: Colors.white24,
+            )),
+        height: 140.0,
+        child: Center(
+          child: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Text(
+            questionBank[_currentIndex % questionBank.length].questionText,
+            style: TextStyle(
+              fontFamily: 'Ubuntu',
+              color: Colors.white,
+              fontSize: 20.0,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        )),
+      ),
+    );
+  }
+
+  Center avatar() {
+    return Center(
+      child: Image.asset(
+        'images/coder.png',
+        height: 300,
+        width: 300,
+      ),
+    );
+  }
+
+  _checkAnswer(bool ansChoice, BuildContext context) {
+    if (ansChoice == questionBank[_currentIndex].isCorrect) {
+      setState(() {
+        _currentIndex = (_currentIndex + 1) % questionBank.length;
+      });
+      debugPrint('yes correct');
+      final snackBar = SnackBar(
+        backgroundColor: Color(0xFF2a710b),
+        duration: Duration(milliseconds: 500),
+        content: Text('Correct', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+      );
+      Scaffold.of(context).showSnackBar(snackBar);
+    } else {
+      debugPrint('incorrect');
+      final snackBar = SnackBar(
+        backgroundColor: Color(0xFFd31d00),
+        duration: Duration(milliseconds: 500),
+        content: Text('Wrong', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold,)),
+      );
+      Scaffold.of(context).showSnackBar(snackBar);
+    }
+  }
+
+  _nextQuestion() {
+    setState(() {
+      _currentIndex++;
+    });
+  }
+
+  _preQuestion() {
+    setState(() {
+      _currentIndex--;
+    });
+  }
+
 }
