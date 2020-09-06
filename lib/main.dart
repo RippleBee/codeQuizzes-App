@@ -68,12 +68,30 @@ class _State extends State<CodeQuiz> {
     Question.name(
         'Passing an array in method , the method receives it as the reference of that array.',
         true),
+    Question.name(
+        'Names of functions in two different files linked together must be unique.',
+        true),
+    Question.name(
+        'If return type for a function is not specified, it defaults to int',
+        true),
+    Question.name(
+        'printf("\\n"); statement can print "\n" on the screen', true),
+    Question.name('Structure is collection of dissimilar data types.', false),
+    Question.name(
+        'C99 standard guarantees uniqueness of 12 characters for external names.',
+        false),
+    Question.name(
+        ' % operators has its associativity from right to left.', false),
+    Question.name(
+        'The conversion characters d, i, o, u, and x may be preceded by h in scanf() to indicate A pointer to long',
+        false),
+    Question.name('An array named B in row 7 column 3 stored B[7,3].', false),
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xFFaf5b4e ),
+        backgroundColor: Color(0xFFaf5b4e),
         title: Text(
           'CodeQuiz',
           style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
@@ -84,12 +102,10 @@ class _State extends State<CodeQuiz> {
       // backgroundColor: Colors.red[50],
       body: Container(
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Color(0xFFFFEFBA),Color(0xFFeaafc8)],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight
-          )
-        ),
+            gradient: LinearGradient(
+                colors: [Color(0xFFFFEFBA), Color(0xFFeaafc8)],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight)),
         child: SafeArea(
           child: Builder(
             builder: (BuildContext context) => Container(
@@ -139,7 +155,6 @@ class _State extends State<CodeQuiz> {
           child: Icon(
             Icons.arrow_right,
             color: Colors.white,
-            
           )),
     );
   }
@@ -214,10 +229,10 @@ class _State extends State<CodeQuiz> {
       decoration: BoxDecoration(
           boxShadow: [
             BoxShadow(
-                offset: Offset(5, 6),
-                blurRadius: 10,
-                color: Color(0xFFA0766E),
-                spreadRadius: 2,
+              offset: Offset(5, 6),
+              blurRadius: 10,
+              color: Color(0xFFA0766E),
+              spreadRadius: 2,
             )
           ],
           borderRadius: BorderRadius.circular(0.0),
@@ -238,7 +253,7 @@ class _State extends State<CodeQuiz> {
 
   Padding question() {
     return Padding(
-      padding: const EdgeInsets.all(20.0),
+      padding: EdgeInsets.only(top: 20, left: 30, right: 30, bottom: 50),
       child: Container(
         decoration: BoxDecoration(
             boxShadow: [
@@ -246,18 +261,17 @@ class _State extends State<CodeQuiz> {
                   offset: Offset(3, 6),
                   blurRadius: 12,
                   color: Color(0xFF691844),
-                  spreadRadius: 2
-              )
+                  spreadRadius: 2)
             ],
             color: Color(0xFF7691844),
             borderRadius: BorderRadius.circular(20.0),
             border: Border.all(
               //   style: BorderStyle.solid,
-               color: Color(0xFF691844),
+              color: Color(0xFF691844),
             )),
         height: 140.0,
         child: Center(
-          child: Padding(
+            child: Padding(
           padding: EdgeInsets.all(10.0),
           child: Text(
             questionBank[_currentIndex % questionBank.length].questionText,
@@ -273,12 +287,14 @@ class _State extends State<CodeQuiz> {
     );
   }
 
-  Center avatar() {
-    return Center(
-      child: Image.asset(
-        'images/coder.png',
-        height: 300,
-        width: 300,
+  Container avatar() {
+    return Container(
+        child: Center(
+        child: Image.asset(
+          'images/coder.png',
+          height: 300,
+          width: 300,
+        ),
       ),
     );
   }
@@ -292,7 +308,8 @@ class _State extends State<CodeQuiz> {
       final snackBar = SnackBar(
         backgroundColor: Color(0xFF2a710b),
         duration: Duration(milliseconds: 500),
-        content: Text('Correct', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+        content: Text('Correct',
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
       );
       Scaffold.of(context).showSnackBar(snackBar);
     } else {
@@ -300,7 +317,11 @@ class _State extends State<CodeQuiz> {
       final snackBar = SnackBar(
         backgroundColor: Color(0xFFd31d00),
         duration: Duration(milliseconds: 500),
-        content: Text('Wrong', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold,)),
+        content: Text('Wrong',
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+            )),
       );
       Scaffold.of(context).showSnackBar(snackBar);
     }
@@ -317,5 +338,4 @@ class _State extends State<CodeQuiz> {
       _currentIndex--;
     });
   }
-
 }
