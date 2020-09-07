@@ -131,10 +131,14 @@ class _State extends State<CodeQuiz> {
 
   AppBar buildAppBar() {
     return AppBar(
-      backgroundColor: Color(0xFFaf5b4e),
+      backgroundColor: Color(0xFF442C2E),
       title: Text(
         'CodeQuiz',
-        style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+        style: TextStyle(
+          fontSize: 30,
+          fontWeight: FontWeight.bold,
+          fontFamily: 'Ubuntu',
+        ),
       ),
       centerTitle: true,
       elevation: 19,
