@@ -90,46 +90,54 @@ class _State extends State<CodeQuiz> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Color(0xFFaf5b4e),
-        title: Text(
-          'CodeQuiz',
-          style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-        ),
-        centerTitle: true,
-        elevation: 19,
-      ),
+      appBar: buildAppBar(),
       // backgroundColor: Colors.red[50],
-      body: Container(
-        decoration: BoxDecoration(
-            gradient: LinearGradient(
-                colors: [Color(0xFFFFEFBA), Color(0xFFeaafc8)],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight)),
-        child: SafeArea(
-          child: Builder(
-            builder: (BuildContext context) => Container(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  avatar(),
-                  question(),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <Widget>[
-                      preQuestion(),
-                      chechkAnswerTrue(context),
-                      checkAnswerFalse(context),
-                      nextQuestion(),
-                    ],
-                  ),
-                  Spacer(),
-                ],
-              ),
+      body: buildBody(),
+    );
+  }
+
+  Container buildBody() {
+    return Container(
+      decoration: BoxDecoration(
+          gradient: LinearGradient(
+              colors: [Color(0xFFf0b4d5), Color(0xFFf7e3a1)],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight)),
+      child: SafeArea(
+        child: Builder(
+          builder: (BuildContext context) => Container(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                avatar(),
+                question(),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    preQuestion(),
+                    chechkAnswerTrue(context),
+                    checkAnswerFalse(context),
+                    nextQuestion(),
+                  ],
+                ),
+                Spacer(),
+              ],
             ),
           ),
         ),
       ),
+    );
+  }
+
+  AppBar buildAppBar() {
+    return AppBar(
+      backgroundColor: Color(0xFFaf5b4e),
+      title: Text(
+        'CodeQuiz',
+        style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+      ),
+      centerTitle: true,
+      elevation: 19,
     );
   }
 
@@ -253,21 +261,22 @@ class _State extends State<CodeQuiz> {
 
   Padding question() {
     return Padding(
-      padding: EdgeInsets.only(top: 20, left: 30, right: 30, bottom: 50),
+      padding: EdgeInsets.only(top: 8, left: 30, right: 30, bottom: 38),
       child: Container(
         decoration: BoxDecoration(
             boxShadow: [
               BoxShadow(
-                  offset: Offset(3, 6),
-                  blurRadius: 12,
-                  color: Color(0xFF691844),
-                  spreadRadius: 2)
+                  offset: Offset(3, 5),
+                  blurRadius: 18,
+                  color: Color(0xFFb3635b),
+                  spreadRadius: 2,
+              )
             ],
-            color: Color(0xFF7691844),
+            color: Color(0xFFb3635b),
             borderRadius: BorderRadius.circular(20.0),
             border: Border.all(
               //   style: BorderStyle.solid,
-              color: Color(0xFF691844),
+              color: Color(0xFFb3635b),
             )),
         height: 140.0,
         child: Center(
@@ -289,6 +298,17 @@ class _State extends State<CodeQuiz> {
 
   Container avatar() {
     return Container(
+     /* decoration: BoxDecoration(
+        boxShadow: 
+        [
+        BoxShadow(
+            offset: Offset(2,3),
+            blurRadius: 50000,
+            color: Colors.grey,
+            spreadRadius: 1,
+          ),
+        ],
+      ), */
         child: Center(
         child: Image.asset(
           'images/coder.png',
