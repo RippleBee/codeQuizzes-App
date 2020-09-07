@@ -1,6 +1,5 @@
 # CodeQuiz
-
-![quizApp](https://user-images.githubusercontent.com/60808266/92355814-d8588880-f106-11ea-83a8-a07472221b20.jpg)
+![rippleBee](https://user-images.githubusercontent.com/60808266/92357147-32f2e400-f109-11ea-861e-93efe60f1781.jpg)
 
 A new Application by RippleBee!
 
