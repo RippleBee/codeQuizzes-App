@@ -96,7 +96,7 @@ class DevelopersPage extends StatelessWidget {
               child: ListTile(
                 leading: CircleAvatar(
                   radius: 30,
-                  backgroundImage: AssetImage("images/arnob.jpeg"),
+                  backgroundImage: AssetImage("images/arnob.jpg"),
                 ),
                 title: Text(
                   "Arnob  Mahmud",
