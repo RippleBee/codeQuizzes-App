@@ -13,15 +13,15 @@ class DevelopersPage extends StatelessWidget {
             child: Stack(
               children: [
                 Image.asset(
-                  "images/programming.jpg",
+                  "images/linux.jpg",
                   fit: BoxFit.cover,
                 ),
                 Positioned(
                   left: 25,
-                  top: 170,
+                  top: 160,
                   child: CircleAvatar(
                     radius: 40,
-                    backgroundImage: AssetImage("images/rplb.jpg"),
+                    backgroundImage: AssetImage("images/logo.jpg"),
                   ),
                 ),
               ],
@@ -45,19 +45,22 @@ class DevelopersPage extends StatelessWidget {
               ),
             ),
           ),
+          SizedBox(height: 10,),
           Container(
+            height: 100,
             child: Padding(
               padding: const EdgeInsets.all(8.0),
+
               child: ListTile(
                 leading: CircleAvatar(
                   radius: 30,
-                  backgroundImage: AssetImage("images/arnob.jpg"),
+                  backgroundImage: AssetImage("images/arnob.jpeg"),
                 ),
                 title: Text(
-                  "Arnob Mahmud",
+                  "Arnob  Mahmud",
                   style: TextStyle(
                       fontFamily: "Ubuntu",
-                      fontSize: 20,
+                      fontSize: 24,
                       fontWeight: FontWeight.bold,
                       color: Color(0xFF393949)),
                 ),
@@ -74,7 +77,7 @@ class DevelopersPage extends StatelessWidget {
                 
               ),
             ),
-
+            SizedBox(height: 20,),
             Container(
             child: Padding(
               padding: const EdgeInsets.all(8.0),
@@ -84,10 +87,10 @@ class DevelopersPage extends StatelessWidget {
                   backgroundImage: AssetImage("images/munna.jpg"),
                 ),
                 title: Text(
-                  "Fahim Muntashir",
+                  "Fahim  Muntashir",
                   style: TextStyle(
                       fontFamily: "Ubuntu",
-                      fontSize: 20,
+                      fontSize: 24,
                       fontWeight: FontWeight.bold,
                       color: Color(0xFF393949)),
                 ),
@@ -99,11 +102,27 @@ class DevelopersPage extends StatelessWidget {
                         fontSize: 16),
                   ),
                   trailing: IconButton(
-                    icon: Icon(Icons.message_outlined), onPressed: () {}),
+                    icon: Icon(Icons.message_outlined), onPressed: () {
+                      
+                    }),
                 ),
                 
               ),
             ),
+            SizedBox(height: 20,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text("We Are The Geeks of RippleBee ❤️",
+                style: TextStyle(
+                  color: Color(0xFF122d70),
+                  fontSize: 16,
+                  fontFamily: "Ubuntu",
+                  fontWeight: FontWeight.w700,
+
+                ),)
+              ],
+            )
         ],
       ),
     );
