@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:codequiz/model/question.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -90,6 +92,90 @@ class _State extends State<CodeQuiz> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            Container(
+              child: Stack(
+                children: [
+                  Image.asset(
+                    "images/programming.jpg",
+                    fit: BoxFit.cover,
+                  ),
+                  Positioned(
+                    left: 95,
+                    top: 40,
+                    child: CircleAvatar(
+                      radius: 40,
+                      backgroundImage: AssetImage("images/rplb.jpg"),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 20, right: 20, left:80),
+              child: Container(
+                  child: Text("Developers",
+                  style: TextStyle(
+                    fontFamily: "Ubuntu",
+                    color: Color(0xFF601852),
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold                  ),
+                  ),
+              ),
+            ),
+            
+            Padding(
+              padding: const EdgeInsets.only(top: 20),
+              child: Container(
+                child: ListTile(
+                  leading: CircleAvatar(
+                    radius: 25,
+                    backgroundImage: AssetImage("images/arnob.jpg"),
+                  ),
+                  title: Text(
+                    "Arnob Mahmud",
+                    style: TextStyle(color: Color(0xFF261860),
+                     fontFamily: "Ubuntu", fontSize: 20),
+                  ),
+                  subtitle: Text(
+                      "BSc in Textile Engineering, Bangladesh University of Textiles (BUTEX)", style: TextStyle(
+                        color: Color(0xFF51263b), fontSize: 15
+                      ),
+                    ),
+                  trailing: IconButton(icon: Icon(Icons.messenger_rounded),
+                   onPressed: (){}
+                ),      
+              ),
+            )
+            ),
+            
+            Padding(
+              padding: const EdgeInsets.only( top : 8.0),
+              child: Container(
+                  child: ListTile(
+                    leading: CircleAvatar(
+                      radius: 25,
+                      backgroundImage: AssetImage("images/munna.jpg"),
+                    ),
+                    title: Text(
+                      "Fafim Muntashir",
+                      style: TextStyle(color: Color(0xFF261860), fontFamily: "Ubuntu", fontSize: 18),
+                    ),
+                    subtitle: Text(
+                        "BSc in Computer Science and Engineering, North South University (NSU)", style: TextStyle(
+                          color: Color(0xFF51263b), fontSize: 15
+                        ),),
+                    trailing: IconButton(icon: Icon(Icons.messenger_rounded),
+                     onPressed: (){})
+                        
+                ),
+              ),
+            )
+          ],
+        ),
+      ),
       appBar: buildAppBar(),
       // backgroundColor: Colors.red[50],
       body: buildBody(),
@@ -270,10 +356,10 @@ class _State extends State<CodeQuiz> {
         decoration: BoxDecoration(
             boxShadow: [
               BoxShadow(
-                  offset: Offset(3, 5),
-                  blurRadius: 18,
-                  color: Color(0xFFb3635b),
-                  spreadRadius: 2,
+                offset: Offset(3, 5),
+                blurRadius: 18,
+                color: Color(0xFFb3635b),
+                spreadRadius: 2,
               )
             ],
             color: Color(0xFFb3635b),
@@ -302,7 +388,7 @@ class _State extends State<CodeQuiz> {
 
   Container avatar() {
     return Container(
-     /* decoration: BoxDecoration(
+      /* decoration: BoxDecoration(
         boxShadow: 
         [
         BoxShadow(
@@ -313,7 +399,7 @@ class _State extends State<CodeQuiz> {
           ),
         ],
       ), */
-        child: Center(
+      child: Center(
         child: Image.asset(
           'images/coder.png',
           height: 300,
