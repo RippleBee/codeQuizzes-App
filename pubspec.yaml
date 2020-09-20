@@ -60,6 +60,9 @@ flutter:
     - family: Ubuntu
       fonts:
          - asset: fonts/Ubuntu-Regular.ttf
+    - family: Kufam
+      fonts:
+         - asset: fonts/Kufam-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

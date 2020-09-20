@@ -53,11 +53,14 @@ class DevelopersPage extends StatelessWidget {
             child: Container(
               decoration: BoxDecoration(
                   color: Color(0xFFf7abb9),
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(20),
+                    topRight: Radius.circular(20),
+                  ),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
-                      spreadRadius: 2,
+                      color: Colors.grey.withOpacity(0.4),
+                      spreadRadius: 1.4,
                       blurRadius: 10,
                       offset: Offset(0, 7),
                     )
@@ -110,7 +113,7 @@ class DevelopersPage extends StatelessWidget {
                   "BSc in Textile Engineering, Bangladesh University of Textiles (BUTEX)",
                   style: TextStyle(
                     color: Color(0xFF440544),
-                    fontFamily: "Ubuntu",
+                    fontFamily: "Kufam",
                     fontSize: 17,
                   ),
                 ),
@@ -146,7 +149,7 @@ class DevelopersPage extends StatelessWidget {
                   "BSc in Computer Science and Engineering, North South University (NSU)",
                   style: TextStyle(
                       color: Color(0xFF440544),
-                      fontFamily: "Ubuntu",
+                      fontFamily: "Kufam",
                       fontSize: 17),
                 ),
                 trailing: IconButton(
