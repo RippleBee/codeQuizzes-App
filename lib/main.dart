@@ -93,13 +93,6 @@ class _State extends State<CodeQuiz> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton.extended(
-          backgroundColor: Color(0xFF393949),
-          onPressed: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => DevelopersPage()));
-          },
-          label: Icon(Icons.ac_unit)),
       appBar: buildAppBar(),
       // backgroundColor: Colors.red[50],
       body: buildBody(),
@@ -152,6 +145,14 @@ class _State extends State<CodeQuiz> {
       ),
       centerTitle: true,
       elevation: 19,
+      actions: [
+        IconButton(
+            icon: Icon(Icons.arrow_forward_ios),
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => DevelopersPage()));
+            })
+      ],
     );
   }
 

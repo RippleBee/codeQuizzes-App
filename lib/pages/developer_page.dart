@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'package:codequiz/main.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -41,6 +42,17 @@ class DevelopersPage extends StatelessWidget {
                     radius: 40,
                     backgroundImage: AssetImage("images/logo.jpg"),
                   ),
+                ),
+                 Positioned(
+                  top: 10,
+                  left: 10,
+                  child: IconButton(
+                    color: Colors.white,
+                      icon: Icon(Icons.arrow_back_ios), 
+                      onPressed: () {
+                          Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => MyApp()));
+                      }),
                 ),
               ],
             ),
