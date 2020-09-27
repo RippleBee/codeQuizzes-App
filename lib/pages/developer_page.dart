@@ -30,28 +30,30 @@ class DevelopersPage extends StatelessWidget {
                   borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(40),
                       bottomRight: Radius.circular(40)),
-                  child: Image.asset(
-                    "images/linux.jpg",
-                    fit: BoxFit.cover,
+                  child: Container(
+                    height: 300,
+                    width: 600,
+                    child: Image.asset(
+                      "images/logo.jpg",
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
+                //  Positioned(
+                //    child: CircleAvatar(
+                //       radius: 40,
+                //      backgroundImage: AssetImage("images/logo.jpg"),
+                //    ),
+                //  ),
                 Positioned(
-                  left: 35,
-                  top: 175,
-                  child: CircleAvatar(
-                    radius: 40,
-                    backgroundImage: AssetImage("images/logo.jpg"),
-                  ),
-                ),
-                 Positioned(
                   top: 10,
                   left: 10,
                   child: IconButton(
-                    color: Colors.white,
-                      icon: Icon(Icons.arrow_back_ios), 
+                      color: Colors.black,
+                      icon: Icon(Icons.arrow_back_ios),
                       onPressed: () {
-                          Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => MyApp()));
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => MyApp()));
                       }),
                 ),
               ],
@@ -111,7 +113,7 @@ class DevelopersPage extends StatelessWidget {
               child: ListTile(
                 leading: CircleAvatar(
                   radius: 30,
-                  backgroundImage: AssetImage("images/arnob.jpg"),
+                  backgroundImage: AssetImage("images/arnob1.jpg"),
                 ),
                 title: Text(
                   "Arnob  Mahmud",
@@ -174,7 +176,7 @@ class DevelopersPage extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 20,
+            height: 10,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -189,7 +191,10 @@ class DevelopersPage extends StatelessWidget {
                 ),
               )
             ],
-          )
+          ),
+          SizedBox(
+            height: 20,
+          ),
         ],
       ),
     );
