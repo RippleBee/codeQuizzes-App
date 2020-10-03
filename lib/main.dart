@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:codequiz/model/question.dart';
 import 'package:codequiz/pages/developer_page.dart';
 import 'package:flutter/cupertino.dart';
