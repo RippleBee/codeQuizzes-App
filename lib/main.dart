@@ -97,37 +97,39 @@ class _State extends State<CodeQuiz> {
     );
   }
 
-  Container buildBody() {
-    return Container(
-      decoration: BoxDecoration(
-          gradient: LinearGradient(
-              colors: [Color(0xFFf0b4d5), Color(0xFFf7e3a1)],
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight)),
-      child: SafeArea(
-        child: Builder(
-          builder: (BuildContext context) => Container(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                avatar(),
-                question(),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: <Widget>[
-                    preQuestion(),
-                    chechkAnswerTrue(context),
-                    checkAnswerFalse(context),
-                    nextQuestion(),
-                  ],
-                ),
-                Spacer(),
-              ],
+  Widget buildBody() {
+    return Stack(children: [
+      Container(
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+                colors: [Color(0xFFf7e3d9), Color(0xFFf7e3c9)],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight)),
+        child: SafeArea(
+          child: Builder(
+            builder: (BuildContext context) => Container(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  avatar(),
+                  question(),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      preQuestion(),
+                      chechkAnswerTrue(context),
+                      checkAnswerFalse(context),
+                      nextQuestion(),
+                    ],
+                  ),
+                  Spacer(),
+                ],
+              ),
             ),
           ),
         ),
       ),
-    );
+    ]);
   }
 
   AppBar buildAppBar() {

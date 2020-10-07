@@ -31,8 +31,8 @@ class DevelopersPage extends StatelessWidget {
                       bottomLeft: Radius.circular(40),
                       bottomRight: Radius.circular(40)),
                   child: Container(
-                    height: 300,
-                    width: 600,
+                    width: MediaQuery.of(context).size.width * 2,
+                    height: MediaQuery.of(context).size.height * .5,
                     child: Image.asset(
                       "images/logo.jpg",
                       fit: BoxFit.cover,
