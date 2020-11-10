@@ -220,4 +220,63 @@ List<Question> questionBank = [
   Question(
       questionText: 'Errors in a program are called hacks.  ',
       isCorrect: false),
+  Question(
+      questionText: 'Logic errors are easier to find than syntax errors.  ',
+      isCorrect: false),
+  Question(
+      questionText:
+          'The file containing the source code is called the source file. ',
+      isCorrect: true),
+  Question(questionText: 'Comments are statements in C++.  ', isCorrect: false),
+  Question(questionText: 'Names in C++ are case sensitive.  ', isCorrect: true),
+  Question(
+      questionText:
+          'The binary number system uses only the two digits 0 and 1. ',
+      isCorrect: true),
+  Question(
+      questionText:
+          'Variables declared using the string data type usually are initialized to the empty string.  ',
+      isCorrect: true),
+  Question(
+      questionText:
+          'The C++ compiler treats all numeric literal constants containing a decimal place as a double data type.',
+      isCorrect: true),
+  Question(
+      questionText:
+          'A data type ranks higher than another data type if it can store larger numbers.  ',
+      isCorrect: true),
+  Question(
+      questionText: 'A variable can store only one value at a time. ',
+      isCorrect: true),
+  Question(
+      questionText:
+          'If an expression contains more than one operator having the same priority, those operators are evaluated from right to left.  ',
+      isCorrect: false),
+  Question(
+      questionText: 'The newline character in C++ is "\\N".  ',
+      isCorrect: false),
+  Question(
+      questionText:
+          'You use the selection structure when you want a program to make a decision or comparison and then select one of two paths, depending on the result of that decision or comparison. ',
+      isCorrect: true),
+  Question(
+      questionText:
+          'And if selection structure contains two sets of instructions: one set is processed when the condition is true and the other set is processed when the condition is false. ',
+      isCorrect: false),
+  Question(
+      questionText:
+          'In C++, you use the if statement to code the if and if/else forms of the selection structure. ',
+      isCorrect: true),
+  Question(
+      questionText:
+          'In C++, you can have an else clause without matching the if clause.  ',
+      isCorrect: false),
+  Question(
+      questionText:
+          'In C++, comparisons with a precedence number of 2 are performed before comparisons with a precedence number of 1.  ',
+      isCorrect: false),
+  Question(
+      questionText:
+          'You should never use the equality operator to compare two floating-point numbers.  ',
+      isCorrect: true),
 ];
