@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'pages/home-page.dart';
+import 'package:codequiz/pages/home-page.dart';
 
 void main() => runApp(MyApp());
 
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
         primaryColor: Color(0xFF422a3c),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: HomePage(),
+      home: MyHomePage(),
     );
   }
 }
