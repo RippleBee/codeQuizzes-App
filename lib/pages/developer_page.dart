@@ -2,6 +2,8 @@ import 'dart:ui';
 import 'package:codequiz/main.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 
 class DevelopersPage extends StatelessWidget {
   @override
@@ -13,17 +15,17 @@ class DevelopersPage extends StatelessWidget {
           Container(
             //  margin: EdgeInsets.all(5.0),
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(40),
-                bottomRight: Radius.circular(40),
-              ),
-              // boxShadow: [
-              //   BoxShadow(
-              //       color: Colors.grey.withOpacity(0.5),
-              //       spreadRadius: 2,
-              //       blurRadius: 10,
-              //       offset: Offset(0, 7))
-            ),
+                borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(40),
+                  bottomRight: Radius.circular(40),
+                ),
+                boxShadow: [
+                  BoxShadow(
+                      color: Colors.grey.withOpacity(0.5),
+                      spreadRadius: 10,
+                      blurRadius: 15,
+                      offset: Offset(0, 7))
+                ]),
             child: Stack(
               children: [
                 ClipRRect(
@@ -32,7 +34,7 @@ class DevelopersPage extends StatelessWidget {
                       bottomRight: Radius.circular(40)),
                   child: Container(
                     width: MediaQuery.of(context).size.width * 2,
-                    height: MediaQuery.of(context).size.height * .5,
+                    height: MediaQuery.of(context).size.height * .4,
                     child: Image.asset(
                       "images/logo.jpg",
                       fit: BoxFit.cover,
@@ -60,7 +62,7 @@ class DevelopersPage extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 170,
+            height: 20,
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
@@ -178,6 +180,42 @@ class DevelopersPage extends StatelessWidget {
           SizedBox(
             height: 10,
           ),
+          Container(
+              child: Padding(
+            padding: const EdgeInsets.only(left: 30, right: 30),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                IconButton(
+                  icon: Icon(
+                    EvaIcons.google,
+                    color: Colors.red,
+                    size: 40,
+                  ),
+                  onPressed: () {},
+                ),
+                IconButton(
+                  icon: Icon(
+                    FontAwesomeIcons.facebook,
+                    color: Colors.blue,
+                    size: 40,
+                  ),
+                  onPressed: () {},
+                ),
+                IconButton(
+                  icon: Icon(
+                    FontAwesomeIcons.linkedin,
+                    color: Colors.blueAccent,
+                    size: 40,
+                  ),
+                  onPressed: () {},
+                ),
+              ],
+            ),
+          )),
+          SizedBox(
+            height: 170,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -208,3 +246,38 @@ class DevelopersPage extends StatelessWidget {
     );
   }
 }
+
+
+//  InfoCard(
+//               text: email,
+//               icon: Icons.email,
+//               onPressed: () async {
+//                 final emailAddress = 'mailto:$email';
+//                 if (await launcher.canLaunch(emailAddress)) {
+//                   await launcher.launch(emailAddress);
+//                 } else {
+//                   _showDialog(
+//                     context,
+//                     title: 'Sorry',
+//                     msg: 'please try again ',
+//                   );
+//                 }
+//               },
+//             ),
+// From Fahim Muntashir to Everyone:  12:42 AM
+//  InfoCard(
+//               text: email,
+//               icon: Icons.email,
+//               onPressed: () async {
+//                 final emailAddress = 'mailto:$email';
+//                 if (await launcher.canLaunch(emailAddress)) {
+//                   await launcher.launch(emailAddress);
+//                 } else {
+//                   _showDialog(
+//                     context,
+//                     title: 'Sorry',
+//                     msg: 'please try again ',
+//                   );
+//                 }
+//               },
+//             ),

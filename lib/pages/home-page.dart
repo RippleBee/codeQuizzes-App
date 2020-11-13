@@ -34,7 +34,7 @@ class _MyHomePage extends State<MyHomePage> {
         ],
       ),
       body: Container(
-        color: Color(0xFFFCFFCE),
+          color: Color(0xFFFCFFCE),
           child: SafeArea(
             child: Builder(
               builder: (BuildContext context) => Container(
@@ -253,10 +253,10 @@ class _MyHomePage extends State<MyHomePage> {
         duration: Duration(milliseconds: 500),
         content: Text('Correct',
             style: TextStyle(
-              fontSize: 20,
-              letterSpacing: 1,
-              fontFamily: 'Kufam',
-             fontWeight: FontWeight.w400)),
+                fontSize: 20,
+                letterSpacing: 1,
+                fontFamily: 'Kufam',
+                fontWeight: FontWeight.w400)),
       );
       Scaffold.of(context).showSnackBar(snackBar);
     } else {
