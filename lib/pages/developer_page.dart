@@ -7,23 +7,23 @@ class DevelopersPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFfff8e3),
+      backgroundColor: Color(0xFFFCFFCE),
       body: ListView(
         children: [
           Container(
             //  margin: EdgeInsets.all(5.0),
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(40),
-                  bottomRight: Radius.circular(40),
-                ),
-                boxShadow: [
-                  BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
-                      spreadRadius: 2,
-                      blurRadius: 10,
-                      offset: Offset(0, 7))
-                ]),
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(40),
+                bottomRight: Radius.circular(40),
+              ),
+              // boxShadow: [
+              //   BoxShadow(
+              //       color: Colors.grey.withOpacity(0.5),
+              //       spreadRadius: 2,
+              //       blurRadius: 10,
+              //       offset: Offset(0, 7))
+            ),
             child: Stack(
               children: [
                 ClipRRect(
@@ -60,7 +60,7 @@ class DevelopersPage extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 10,
+            height: 170,
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
@@ -86,7 +86,7 @@ class DevelopersPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Icon(
-                    Icons.settings,
+                    Icons.developer_board,
                     color: Color(0xFF1c223d),
                     size: 32,
                   ),
@@ -106,88 +106,96 @@ class DevelopersPage extends StatelessWidget {
           SizedBox(
             height: 5.0,
           ),
-          Container(
-            height: 100,
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: ListTile(
-                leading: CircleAvatar(
-                  radius: 30,
-                  backgroundImage: AssetImage("images/arnob1.png"),
-                ),
-                title: Text(
-                  "Arnob  Mahmud",
-                  style: TextStyle(
-                      fontFamily: "Ubuntu",
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                      color: Color(0xFF393949)),
-                ),
-                subtitle: Text(
-                  "BSc in Textile Engineering, Bangladesh University of Textiles (BUTEX)",
-                  style: TextStyle(
-                    color: Color(0xFF440544),
-                    fontFamily: "Kufam",
-                    fontSize: 17,
-                  ),
-                ),
-                trailing: IconButton(
-                    icon: Icon(
-                      Icons.message_outlined,
-                      color: Color(0xFF504682),
-                    ),
-                    onPressed: () {}),
-              ),
-            ),
-          ),
+          // Container(
+          //   height: 100,
+          //   child: Padding(
+          //     padding: const EdgeInsets.all(8.0),
+          //     child: ListTile(
+          //       leading: CircleAvatar(
+          //         radius: 30,
+          //         backgroundImage: AssetImage("images/arnob1.png"),
+          //       ),
+          //       title: Text(
+          //         "Arnob  Mahmud",
+          //         style: TextStyle(
+          //             fontFamily: "Ubuntu",
+          //             fontSize: 24,
+          //             fontWeight: FontWeight.bold,
+          //             color: Color(0xFF393949)),
+          //       ),
+          //       subtitle: Text(
+          //         "BSc in Textile Engineering, Bangladesh University of Textiles (BUTEX)",
+          //         style: TextStyle(
+          //           color: Color(0xFF440544),
+          //           fontFamily: "Kufam",
+          //           fontSize: 17,
+          //         ),
+          //       ),
+          //       trailing: IconButton(
+          //           icon: Icon(
+          //             Icons.message_outlined,
+          //             color: Color(0xFF504682),
+          //           ),
+          //           onPressed: () {}),
+          //     ),
+          //   ),
+          // ),
           SizedBox(
             height: 5.0,
           ),
-          Container(
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: ListTile(
-                leading: CircleAvatar(
-                  radius: 30,
-                  backgroundImage: AssetImage("images/munna.jpg"),
-                ),
-                title: Text(
-                  "Fahim  Muntashir",
-                  style: TextStyle(
-                      fontFamily: "Ubuntu",
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                      color: Color(0xFF393949)),
-                ),
-                subtitle: Text(
-                  "BSc in Computer Science and Engineering, North South University (NSU)",
-                  style: TextStyle(
-                      color: Color(0xFF440544),
-                      fontFamily: "Kufam",
-                      fontSize: 17),
-                ),
-                trailing: IconButton(
-                    icon: Icon(
-                      Icons.message_outlined,
-                      color: Color(0xFF504682),
-                    ),
-                    onPressed: () {}),
-              ),
-            ),
-          ),
+          // Container(
+          //   child: Padding(
+          //     padding: const EdgeInsets.all(8.0),
+          //     child: ListTile(
+          //       leading: CircleAvatar(
+          //         radius: 30,
+          //         backgroundImage: AssetImage("images/munna.jpg"),
+          //       ),
+          //       title: Text(
+          //         "Fahim  Muntashir",
+          //         style: TextStyle(
+          //             fontFamily: "Ubuntu",
+          //             fontSize: 24,
+          //             fontWeight: FontWeight.bold,
+          //             color: Color(0xFF393949)),
+          //       ),
+          //       subtitle: Text(
+          //         "BSc in Computer Science and Engineering, North South University (NSU)",
+          //         style: TextStyle(
+          //             color: Color(0xFF440544),
+          //             fontFamily: "Kufam",
+          //             fontSize: 17),
+          //       ),
+          //       trailing: IconButton(
+          //           icon: Icon(
+          //             Icons.message_outlined,
+          //             color: Color(0xFF504682),
+          //           ),
+          //           onPressed: () {}),
+          //     ),
+          //   ),
+          // ),
           SizedBox(
             height: 10,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                "We Are The Geeks of RippleBee ❤️",
-                style: TextStyle(
-                  color: Color(0xFF785978),
-                  fontSize: 16,
-                  fontFamily: "Ubuntu",
-                  fontWeight: FontWeight.w700,
+              RichText(
+                text: TextSpan(
+                  text: 'The Geeks of ',
+                  style: TextStyle(
+                      letterSpacing: 1.6,
+                      fontFamily: 'Ubuntu',
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xFF632885).withOpacity(0.7)),
+                  children: <TextSpan>[
+                    TextSpan(
+                        text: 'RippleBee',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 20)),
+                  ],
                 ),
               )
             ],

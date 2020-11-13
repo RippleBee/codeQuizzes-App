@@ -13,7 +13,7 @@ class _MyHomePage extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xFF442C2E),
+        backgroundColor: Color(0xFF442C3E),
         title: Text(
           'CodeQuiz',
           style: TextStyle(
@@ -34,7 +34,7 @@ class _MyHomePage extends State<MyHomePage> {
         ],
       ),
       body: Container(
-        color: Color(0xFFFCFFDB),
+        color: Color(0xFFFCFFCE),
           child: SafeArea(
             child: Builder(
               builder: (BuildContext context) => Container(
@@ -249,21 +249,27 @@ class _MyHomePage extends State<MyHomePage> {
       });
       debugPrint('yes correct');
       final snackBar = SnackBar(
-        backgroundColor: Color(0xFF2a710b),
+        backgroundColor: Colors.green.withOpacity(0.9),
         duration: Duration(milliseconds: 500),
         content: Text('Correct',
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+            style: TextStyle(
+              fontSize: 20,
+              letterSpacing: 1,
+              fontFamily: 'Kufam',
+             fontWeight: FontWeight.w400)),
       );
       Scaffold.of(context).showSnackBar(snackBar);
     } else {
       debugPrint('incorrect');
       final snackBar = SnackBar(
-        backgroundColor: Color(0xFFd31d00),
+        backgroundColor: Colors.red.withOpacity(0.9),
         duration: Duration(milliseconds: 500),
         content: Text('Wrong',
             style: TextStyle(
               fontSize: 20,
-              fontWeight: FontWeight.bold,
+              letterSpacing: 1,
+              fontFamily: 'Kufam',
+              fontWeight: FontWeight.w400,
             )),
       );
       Scaffold.of(context).showSnackBar(snackBar);
