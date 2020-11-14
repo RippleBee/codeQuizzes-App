@@ -4,8 +4,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-class DevelopersPage extends StatelessWidget {
+class DevelopersPage extends StatefulWidget {
+  @override
+  _DevelopersPageState createState() => _DevelopersPageState();
+}
+
+class _DevelopersPageState extends State<DevelopersPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -192,7 +198,7 @@ class DevelopersPage extends StatelessWidget {
                     color: Colors.red,
                     size: 40,
                   ),
-                  onPressed: () {},
+                  onPressed: _launchGmail,
                 ),
                 IconButton(
                   icon: Icon(
@@ -200,7 +206,7 @@ class DevelopersPage extends StatelessWidget {
                     color: Colors.blue,
                     size: 40,
                   ),
-                  onPressed: () {},
+                  onPressed: _launchFB,
                 ),
                 IconButton(
                   icon: Icon(
@@ -208,7 +214,7 @@ class DevelopersPage extends StatelessWidget {
                     color: Colors.blueAccent,
                     size: 40,
                   ),
-                  onPressed: () {},
+                  onPressed: _launchLinkedIn,
                 ),
               ],
             ),
@@ -247,37 +253,27 @@ class DevelopersPage extends StatelessWidget {
   }
 }
 
-
-//  InfoCard(
-//               text: email,
-//               icon: Icons.email,
-//               onPressed: () async {
-//                 final emailAddress = 'mailto:$email';
-//                 if (await launcher.canLaunch(emailAddress)) {
-//                   await launcher.launch(emailAddress);
-//                 } else {
-//                   _showDialog(
-//                     context,
-//                     title: 'Sorry',
-//                     msg: 'please try again ',
-//                   );
-//                 }
-//               },
-//             ),
-// From Fahim Muntashir to Everyone:  12:42 AM
-//  InfoCard(
-//               text: email,
-//               icon: Icons.email,
-//               onPressed: () async {
-//                 final emailAddress = 'mailto:$email';
-//                 if (await launcher.canLaunch(emailAddress)) {
-//                   await launcher.launch(emailAddress);
-//                 } else {
-//                   _showDialog(
-//                     context,
-//                     title: 'Sorry',
-//                     msg: 'please try again ',
-//                   );
-//                 }
-//               },
-//             ),
+_launchGmail() async {
+  const url = 'rippledevs@gmail.com';
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
+  }
+}
+_launchFB() async {
+  const url = 'https://www.facebook.com/rippledevs';
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
+  }
+}
+_launchLinkedIn() async {
+  const url = 'https://www.linkedin.com/company/ripplebee/';
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
+  }
+}
