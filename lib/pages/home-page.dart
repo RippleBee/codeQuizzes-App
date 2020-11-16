@@ -26,7 +26,7 @@ class _MyHomePage extends State<MyHomePage> {
         elevation: 19,
         actions: [
           IconButton(
-              icon: Icon(Icons.arrow_forward_ios),
+              icon: Icon(Icons.developer_board_outlined),
               onPressed: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => DevelopersPage()));

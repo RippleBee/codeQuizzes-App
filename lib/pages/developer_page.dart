@@ -1,9 +1,8 @@
 import 'dart:ui';
-import 'package:codequiz/main.dart';
+import 'package:codequiz/pages/home-page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class DevelopersPage extends StatefulWidget {
@@ -26,27 +25,27 @@ class _DevelopersPageState extends State<DevelopersPage> {
                   bottomRight: Radius.circular(40),
                 ),
                 boxShadow: [
-                  BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
-                      spreadRadius: 10,
-                      blurRadius: 15,
-                      offset: Offset(0, 7))
+                  // BoxShadow(
+                  //     color: Colors.grey.withOpacity(0.5),
+                  //     spreadRadius: 10,
+                  //     blurRadius: 15,
+                  //     offset: Offset(0, 7))
                 ]),
             child: Stack(
               children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(40),
-                      bottomRight: Radius.circular(40)),
-                  child: Container(
-                    width: MediaQuery.of(context).size.width * 2,
-                    height: MediaQuery.of(context).size.height * .4,
-                    child: Image.asset(
-                      "images/logo.jpg",
-                      fit: BoxFit.cover,
-                    ),
+                // ClipRRect(
+                //   borderRadius: BorderRadius.only(
+                //       bottomLeft: Radius.circular(40),
+                //       bottomRight: Radius.circular(40)),
+                Container(
+                  width: MediaQuery.of(context).size.width * 2,
+                  height: MediaQuery.of(context).size.height * .4,
+                  child: Image.asset(
+                    "images/dev.jpg",
+                    fit: BoxFit.cover,
                   ),
                 ),
+
                 //  Positioned(
                 //    child: CircleAvatar(
                 //       radius: 40,
@@ -60,8 +59,10 @@ class _DevelopersPageState extends State<DevelopersPage> {
                       color: Colors.black,
                       icon: Icon(Icons.arrow_back_ios),
                       onPressed: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => MyApp()));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => MyHomePage()));
                       }),
                 ),
               ],
@@ -194,19 +195,19 @@ class _DevelopersPageState extends State<DevelopersPage> {
               children: [
                 IconButton(
                   icon: Icon(
-                    EvaIcons.google,
-                    color: Colors.red,
-                    size: 40,
-                  ),
-                  onPressed: _launchGmail,
-                ),
-                IconButton(
-                  icon: Icon(
                     FontAwesomeIcons.facebook,
                     color: Colors.blue,
                     size: 40,
                   ),
                   onPressed: _launchFB,
+                ),
+                IconButton(
+                  icon: Icon(
+                    FontAwesomeIcons.twitter,
+                    color: Colors.blue[400],
+                    size: 40,
+                  ),
+                  onPressed: _launchTwitter,
                 ),
                 IconButton(
                   icon: Icon(
@@ -253,14 +254,15 @@ class _DevelopersPageState extends State<DevelopersPage> {
   }
 }
 
-_launchGmail() async {
-  const url = 'rippledevs@gmail.com';
+_launchTwitter() async {
+  const url = 'https://www.twitter.com/@rippledevs';
   if (await canLaunch(url)) {
     await launch(url);
   } else {
     throw 'Could not launch $url';
   }
 }
+
 _launchFB() async {
   const url = 'https://www.facebook.com/rippledevs';
   if (await canLaunch(url)) {
@@ -269,6 +271,7 @@ _launchFB() async {
     throw 'Could not launch $url';
   }
 }
+
 _launchLinkedIn() async {
   const url = 'https://www.linkedin.com/company/ripplebee/';
   if (await canLaunch(url)) {

@@ -1,4 +1,4 @@
-import 'package:codequiz/pages/home-page.dart';
+import 'package:codequiz/pages/welcome_page.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -11,10 +11,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         fontFamily: 'Kufam',
-        primaryColor: Color(0xFF422a3c),
+        primaryColor: Color(0xFF442C3E),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(),
+      home: WelcomePage(),
     );
   }
 }
