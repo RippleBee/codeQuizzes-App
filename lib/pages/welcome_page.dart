@@ -15,19 +15,23 @@ class _WelcomePageState extends State<WelcomePage> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-              height: 180,
-              width: 220,
+            height: 130,
+            width: 300,
+            child: Center(
               child: Text(
                 'Test  your  programming  and  coding  skills  with  quizzes  and  prepare  yourself for  the  job  interview! ',
-                style: 
-                TextStyle(
-                  letterSpacing: 1.3,
-                  color: Colors.white, 
-                  fontSize: 20, 
-                  fontWeight: FontWeight.w600),
-              )),
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'Lato',
+                    letterSpacing: 1.3,
+                    color: Colors.white,
+                    fontSize: 23,
+                    fontWeight: FontWeight.w600),
+              ),
+            ),
+          ),
           SizedBox(
-            height: 50,
+            height: 25,
           ),
           Container(
             child: Padding(

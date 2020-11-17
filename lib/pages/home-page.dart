@@ -77,10 +77,10 @@ class _MyHomePage extends State<MyHomePage> {
         decoration: BoxDecoration(
             boxShadow: [
               BoxShadow(
-                offset: Offset(3, 5),
-                blurRadius: 18,
-                color: Color(0xFFb3635b),
-                spreadRadius: 2,
+                offset: Offset(4, 5),
+                blurRadius: 17,
+                color: Color(0xFFb36349),
+                spreadRadius: 1.4,
               )
             ],
             color: Color(0xFFb3635b),

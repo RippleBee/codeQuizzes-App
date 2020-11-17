@@ -66,6 +66,9 @@ flutter:
     - family: Kufam
       fonts:
          - asset: fonts/Kufam-Regular.ttf
+    - family: Lato
+      fonts:
+         - asset: fonts/Lato-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
