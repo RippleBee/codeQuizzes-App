@@ -24,21 +24,18 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
   font_awesome_flutter: ^8.8.1
-  eva_icons_flutter: ^2.0.1
   url_launcher: ^5.7.10
-  flutter_neumorphic: ^3.0.3
+  google_fonts: ^1.1.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
 # The following section is specific to Flutter.
 flutter:
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
@@ -46,7 +43,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-   - images/
+    - images/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
@@ -62,13 +59,13 @@ flutter:
   fonts:
     - family: Ubuntu
       fonts:
-         - asset: fonts/Ubuntu-Regular.ttf
+        - asset: fonts/Ubuntu-Regular.ttf
     - family: Kufam
       fonts:
-         - asset: fonts/Kufam-Regular.ttf
+        - asset: fonts/Kufam-Regular.ttf
     - family: Lato
       fonts:
-         - asset: fonts/Lato-Regular.ttf
+        - asset: fonts/Lato-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

@@ -279,128 +279,95 @@ List<Question> questionBank = [
       questionText:
           'You should never use the equality operator to compare two floating-point numbers.  ',
       isCorrect: true),
-
-  Question( 
-    questionText: 'Programmers use a variety of special languages, called programming languages, to communicate with the computer.',
-    isCorrect: true
-  ),
-
-   Question( 
-    questionText: 'The assembly languages represent the only way to communicate directly with the computer.',
-    isCorrect: false
-  ),
-  
-   Question( 
-    questionText: 'When writing a procedure-oriented program, the programmer concentrates on the major tasks that the program needs to perform.',
-    isCorrect: true
-  ),
-  
-   Question( 
-    questionText: 'When writing a procedure-oriented program, the programmer concentrates on the major tasks that the program needs to perform.',
-    isCorrect: true
-  ),
-  
-   Question( 
-    questionText: 'Programs written in a high-level language can be used in many different types of computers.  ',
-    isCorrect: true
-  ),
-  
-   Question( 
-    questionText: 'You can find the sequence structure in every program. ',
-    isCorrect: true
-  ),
-  
-   Question( 
-    questionText: 'Desk-checking is also called pencil-tracing. ',
-    isCorrect: false
-  ),
-  
-   Question( 
-    questionText: 'Pseudocode is standardized among programmers.  ',
-    isCorrect: false
-  ),
-  
-  
-   Question( 
-    questionText: 'When planning an algorithm, you need to create both a flowchart and pseudocode.  ',
-    isCorrect: false
-  ),
-  
-   Question( 
-    questionText: 'A class definition contains two sections: a declaration section and an optional implementation section.  ',
-    isCorrect: true
-  ),
-  
-   Question( 
-    questionText: 'Class names in C++ must use the Pascal case.  ',
-    isCorrect: false
-  ),
-  
-   Question( 
-    questionText: 'The data type and position of each formal parameter in the parameterList of a function call must agree with the data type and position of its corresponding actual argument.  ',
-    isCorrect: true
-  ),
-  
-   Question( 
-    questionText: 'Few C++ programmers enter the function definitions below the main() function in a program.  ',
-    isCorrect: false
-  ),
-  
-   Question( 
-    questionText: 'Large and complex programs are typically written by a team of programmers.  ',
-    isCorrect: true
-  ),
-  
-   Question( 
-    questionText: 'You can use program-defined functions to replace the main() function.  ',
-    isCorrect: false
-  ),
-  
-   Question( 
-    questionText: 'There are no differences between the syntax of a value-returning function and the syntax of a void function.  ',
-    isCorrect: false
-  ),
-  
-   Question( 
-    questionText: 'A function header is considered a statement in C++.  ',
-    isCorrect: false
-  ),
-  
-   Question( 
-    questionText: 'Unless specified otherwise, scalar variables in C++ are passed by reference.  ',
-    isCorrect: false
-  ),
-  
-   Question( 
-    questionText: 'Passing an array by reference is more efficient than passing it by value.  ',
-    isCorrect: true
-  ),
-  
-   Question( 
-    questionText: 'All objects in C++ are created from a class and are referred to as children of the class.  ',
-    isCorrect: false
-  ),
-  
-   Question( 
-    questionText: 'Sequential access files must use the "txt" filename extension.  ',
-    isCorrect: false
-  ),
-  
-   Question( 
-    questionText: 'The ability to use an object for more than one purpose saves programming time and money—an advantage that contributes to the popularity of object-oriented programming.  ',
-    isCorrect: true
-  ),
-  
-   Question( 
-    questionText: 'The top-down design divides a problem into one or more objects.  ',
-    isCorrect: false
-  ),
-  
-   Question( 
-    questionText: 'The objects used in an object-oriented program can take on many different forms.  ',
-    isCorrect: true
-  ),
-  
-
-  
+  Question(
+      questionText:
+          'Programmers use a variety of special languages, called programming languages, to communicate with the computer.',
+      isCorrect: true),
+  Question(
+      questionText:
+          'The assembly languages represent the only way to communicate directly with the computer.',
+      isCorrect: false),
+  Question(
+      questionText:
+          'When writing a procedure-oriented program, the programmer concentrates on the major tasks that the program needs to perform.',
+      isCorrect: true),
+  Question(
+      questionText:
+          'When writing a procedure-oriented program, the programmer concentrates on the major tasks that the program needs to perform.',
+      isCorrect: true),
+  Question(
+      questionText:
+          'Programs written in a high-level language can be used in many different types of computers.  ',
+      isCorrect: true),
+  Question(
+      questionText: 'You can find the sequence structure in every program. ',
+      isCorrect: true),
+  Question(
+      questionText: 'Desk-checking is also called pencil-tracing. ',
+      isCorrect: false),
+  Question(
+      questionText: 'Pseudocode is standardized among programmers.  ',
+      isCorrect: false),
+  Question(
+      questionText:
+          'When planning an algorithm, you need to create both a flowchart and pseudocode.  ',
+      isCorrect: false),
+  Question(
+      questionText:
+          'A class definition contains two sections: a declaration section and an optional implementation section.  ',
+      isCorrect: true),
+  Question(
+      questionText: 'Class names in C++ must use the Pascal case.  ',
+      isCorrect: false),
+  Question(
+      questionText:
+          'The data type and position of each formal parameter in the parameterList of a function call must agree with the data type and position of its corresponding actual argument.  ',
+      isCorrect: true),
+  Question(
+      questionText:
+          'Few C++ programmers enter the function definitions below the main() function in a program.  ',
+      isCorrect: false),
+  Question(
+      questionText:
+          'Large and complex programs are typically written by a team of programmers.  ',
+      isCorrect: true),
+  Question(
+      questionText:
+          'You can use program-defined functions to replace the main() function.  ',
+      isCorrect: false),
+  Question(
+      questionText:
+          'There are no differences between the syntax of a value-returning function and the syntax of a void function.  ',
+      isCorrect: false),
+  Question(
+      questionText: 'A function header is considered a statement in C++.  ',
+      isCorrect: false),
+  Question(
+      questionText:
+          'Unless specified otherwise, scalar variables in C++ are passed by reference.  ',
+      isCorrect: false),
+  Question(
+      questionText:
+          'Passing an array by reference is more efficient than passing it by value.  ',
+      isCorrect: true),
+  Question(
+      questionText:
+          'All objects in C++ are created from a class and are referred to as children of the class.  ',
+      isCorrect: false),
+  Question(
+      questionText:
+          'Sequential access files must use the "txt" filename extension.  ',
+      isCorrect: false),
+  Question(
+      questionText:
+          'The ability to use an object for more than one purpose saves programming time and money—an advantage that contributes to the popularity of object-oriented programming.  ',
+      isCorrect: true),
+  Question(
+      questionText:
+          'The top-down design divides a problem into one or more objects.  ',
+      isCorrect: false),
+  Question(
+      questionText:
+          'The objects used in an object-oriented program can take on many different forms.  ',
+      isCorrect: true),
 ];

@@ -197,7 +197,7 @@ class _DevelopersPageState extends State<DevelopersPage> {
             ),
           )),
           SizedBox(
-            height: 100,
+            height: 90,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,

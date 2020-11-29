@@ -15,14 +15,14 @@ class _WelcomePageState extends State<WelcomePage> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            height: 130,
+            height: 150,
             width: 300,
             child: Center(
               child: Text(
                 'Test  your  programming  and  coding  skills  with  quizzes  and  prepare  yourself for  the  job  interview! ',
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontFamily: 'Lato',
+                    fontFamily: 'Lato',
                     letterSpacing: 1.3,
                     color: Colors.white,
                     fontSize: 23,
