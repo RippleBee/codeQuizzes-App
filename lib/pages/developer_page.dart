@@ -255,7 +255,7 @@ class _DevelopersPageState extends State<DevelopersPage> {
                   ),
                 ),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.07,
+                  height: MediaQuery.of(context).size.height * 0.03,
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -290,7 +290,7 @@ class _DevelopersPageState extends State<DevelopersPage> {
                           size: 32,
                         ),
                         SizedBox(
-                          width: 20,
+                          width: MediaQuery.of(context).size.width * 0.03,
                         ),
                         Text(
                           "Developers",
@@ -340,7 +340,7 @@ class _DevelopersPageState extends State<DevelopersPage> {
                 //   ),
                 // ),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.1,
+                  height: MediaQuery.of(context).size.height * 0.02,
                 ),
                 // Container(
                 //   child: Padding(

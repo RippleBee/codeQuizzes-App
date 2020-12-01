@@ -84,7 +84,6 @@ class _MyHomePage extends State<MyHomePage> {
                 builder: (BuildContext context) => Container(
                   child: ListView(
                     children: [
-                      
                       // Container(
                       //   child: Center(
                       //     child: Image.asset(
@@ -100,7 +99,7 @@ class _MyHomePage extends State<MyHomePage> {
                           top: MediaQuery.of(context).size.height * 0.05,
                           left: MediaQuery.of(context).size.height * 0.2,
                           right: MediaQuery.of(context).size.height * 0.3,
-                          bottom: MediaQuery.of(context).size.height * 0.1,
+                          bottom: MediaQuery.of(context).size.height * 0.08,
                         ),
                         child: Container(
                           decoration: BoxDecoration(
@@ -146,9 +145,6 @@ class _MyHomePage extends State<MyHomePage> {
                           nextQuestion(),
                         ],
                       ),
-                      SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.2,
-                      )
                     ],
                   ),
                 ),
