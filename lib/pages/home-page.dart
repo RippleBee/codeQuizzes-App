@@ -12,60 +12,143 @@ class _MyHomePage extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Color(0xFF442C3E),
-        title: Text(
-          'CodeQuiz',
-          style: TextStyle(
-            fontSize: 30,
-            fontWeight: FontWeight.bold,
-            fontFamily: 'Ubuntu',
+        appBar: AppBar(
+          backgroundColor: Color(0xFF442C3E),
+          title: Text(
+            'CodeQuiz',
+            style: TextStyle(
+              fontSize: 30,
+              fontWeight: FontWeight.bold,
+              fontFamily: 'Ubuntu',
+            ),
           ),
+          centerTitle: true,
+          elevation: 19,
+          actions: [
+            IconButton(
+                icon: Icon(Icons.developer_board_outlined),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => DevelopersPage()));
+                })
+          ],
         ),
-        centerTitle: true,
-        elevation: 19,
-        actions: [
-          IconButton(
-              icon: Icon(Icons.developer_board_outlined),
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => DevelopersPage()));
-              })
-        ],
-      ),
-      body: Container(
-          color: Color(0xFFFCFFCE),
-          child: SafeArea(
-            child: Builder(
-              builder: (BuildContext context) => Container(
-                child: ListView(
-                  children: [
-                    Container(
-                      child: Center(
-                        child: Image.asset(
-                          'images/coder.png',
-                          height: 300,
-                          width: 300,
-                        ),
+        body: OrientationBuilder(builder: (context, orientation) {
+          if (orientation == Orientation.portrait) {
+            return Container(
+                color: Color(0xFFFCFFCE),
+                child: SafeArea(
+                  child: Builder(
+                    builder: (BuildContext context) => Container(
+                      child: ListView(
+                        children: [
+                          Container(
+                            child: Center(
+                              child: Image.asset(
+                                'images/coder.png',
+                                height: MediaQuery.of(context).size.height * .4,
+                                width: MediaQuery.of(context).size.width * .7,
+                              ),
+                            ),
+                          ),
+                          question(),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              preQuestion(),
+                              chechkAnswerTrue(context),
+                              checkAnswerFalse(context),
+                              nextQuestion(),
+                            ],
+                          ),
+                          Spacer(),
+                        ],
                       ),
                     ),
-                    question(),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: <Widget>[
-                        preQuestion(),
-                        chechkAnswerTrue(context),
-                        checkAnswerFalse(context),
-                        nextQuestion(),
-                      ],
-                    ),
-                    Spacer(),
-                  ],
+                  ),
+                ));
+          } else {
+            return landscape();
+          }
+        }));
+  }
+
+  Widget landscape() {
+    return Center(
+        child: Container(
+            color: Color(0xFFFCFFCE),
+            child: SafeArea(
+              child: Builder(
+                builder: (BuildContext context) => Container(
+                  child: ListView(
+                    children: [
+                      Container(
+                        child: Center(
+                          child: Image.asset(
+                            'images/coder.png',
+                            height: MediaQuery.of(context).size.height * .6,
+                            width: MediaQuery.of(context).size.width * .7,
+                          ),
+                        ),
+                      ),
+
+                      // <<============        QUESTION BOX =============>>>
+                      Padding(
+                        padding: EdgeInsets.only(
+                            top: 20, left: 60, right: 60, bottom: 38),
+                        child: Container(
+                          decoration: BoxDecoration(
+                              boxShadow: [
+                                BoxShadow(
+                                  offset: Offset(4, 5),
+                                  blurRadius: 17,
+                                  color: Color(0xFFb36349),
+                                  spreadRadius: 1.4,
+                                )
+                              ],
+                              color: Color(0xFFb3635b),
+                              borderRadius: BorderRadius.circular(20.0),
+                              border: Border.all(
+                                //   style: BorderStyle.solid,
+                                color: Color(0xFFb3635b),
+                              )),
+                          height: MediaQuery.of(context).size.height * 0.4,
+                          child: Center(
+                              child: Padding(
+                            padding: EdgeInsets.all(10.0),
+                            child: Text(
+                              questionBank[_currentIndex % questionBank.length]
+                                  .questionText,
+                              style: TextStyle(
+                                fontFamily: 'Ubuntu',
+                                color: Colors.white,
+                                fontSize: 20.0,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          )),
+                        ),
+                      ),
+                      
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          preQuestion(),
+                          chechkAnswerTrue(context),
+                          checkAnswerFalse(context),
+                          nextQuestion(),
+                        ],
+                      ),
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.2,
+                      )
+                    ],
+                  ),
                 ),
               ),
-            ),
-          )),
-    );
+            )));
   }
 
 // <<<==========   QUESTION BOX ==========>>>
@@ -89,7 +172,7 @@ class _MyHomePage extends State<MyHomePage> {
               //   style: BorderStyle.solid,
               color: Color(0xFFb3635b),
             )),
-        height: 140.0,
+        height: MediaQuery.of(context).size.height * 0.23,
         child: Center(
             child: Padding(
           padding: EdgeInsets.all(10.0),

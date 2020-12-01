@@ -15,8 +15,8 @@ class _WelcomePageState extends State<WelcomePage> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            height: 150,
-            width: 300,
+            height: MediaQuery.of(context).size.height * 0.2,
+            width: MediaQuery.of(context).size.width * 0.7,
             child: Center(
               child: Text(
                 'Test  your  programming  and  coding  skills  with  quizzes  and  prepare  yourself for  the  job  interview! ',
@@ -38,8 +38,8 @@ class _WelcomePageState extends State<WelcomePage> {
               padding: const EdgeInsets.all(8.0),
               child: Center(
                 child: Container(
-                  height: 83,
-                  width: 250,
+                  height: MediaQuery.of(context).size.height * 0.12,
+                  width: MediaQuery.of(context).size.width * 0.6,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(20),
