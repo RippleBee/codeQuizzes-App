@@ -84,20 +84,24 @@ class _MyHomePage extends State<MyHomePage> {
                 builder: (BuildContext context) => Container(
                   child: ListView(
                     children: [
-                      Container(
-                        child: Center(
-                          child: Image.asset(
-                            'images/coder.png',
-                            height: MediaQuery.of(context).size.height * .6,
-                            width: MediaQuery.of(context).size.width * .7,
-                          ),
-                        ),
-                      ),
-
+                      
+                      // Container(
+                      //   child: Center(
+                      //     child: Image.asset(
+                      //       'images/coder.png',
+                      //       height: MediaQuery.of(context).size.height * .6,
+                      //       width: MediaQuery.of(context).size.width * .7,
+                      //     ),
+                      //   ),
+                      // ),
                       // <<============        QUESTION BOX =============>>>
                       Padding(
                         padding: EdgeInsets.only(
-                            top: 20, left: 60, right: 60, bottom: 38),
+                          top: MediaQuery.of(context).size.height * 0.05,
+                          left: MediaQuery.of(context).size.height * 0.2,
+                          right: MediaQuery.of(context).size.height * 0.3,
+                          bottom: MediaQuery.of(context).size.height * 0.1,
+                        ),
                         child: Container(
                           decoration: BoxDecoration(
                               boxShadow: [
@@ -115,9 +119,10 @@ class _MyHomePage extends State<MyHomePage> {
                                 color: Color(0xFFb3635b),
                               )),
                           height: MediaQuery.of(context).size.height * 0.4,
+                          width: MediaQuery.of(context).size.width * 0.3,
                           child: Center(
                               child: Padding(
-                            padding: EdgeInsets.all(10.0),
+                            padding: EdgeInsets.only(right: 30, left: 30),
                             child: Text(
                               questionBank[_currentIndex % questionBank.length]
                                   .questionText,
@@ -131,7 +136,7 @@ class _MyHomePage extends State<MyHomePage> {
                           )),
                         ),
                       ),
-                      
+
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [

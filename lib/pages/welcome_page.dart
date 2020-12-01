@@ -15,6 +15,72 @@ class _WelcomePageState extends State<WelcomePage> {
           if (orientation == Orientation.portrait) {
             return Column(
               mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                  height: MediaQuery.of(context).size.height * 0.25,
+                  width: MediaQuery.of(context).size.width * 0.75,
+                  child: Center(
+                    child: Text(
+                      'Test  your  programming  and  coding  skills  with  quizzes  and  prepare  yourself for  the  job  interview! ',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          fontFamily: 'Lato',
+                          letterSpacing: 1.3,
+                          color: Colors.white,
+                          fontSize: 23,
+                          fontWeight: FontWeight.w600),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * .05,
+                ),
+                GestureDetector(
+                    child: Center(
+                      child: Container(
+                        height: MediaQuery.of(context).size.height * 0.12,
+                        width: MediaQuery.of(context).size.width * 0.7,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(20),
+                            topRight: Radius.circular(20),
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                                color: Color(0xFF442C3E).withOpacity(0.1),
+                                spreadRadius: 10,
+                                blurRadius: 15,
+                                offset: Offset(5, 3))
+                          ],
+                          color: Color(0xFFf7e1ed),
+                        ),
+                        child: Center(
+                          child: Text(
+                            'Start Quiz',
+                            style: TextStyle(
+                              fontFamily: 'Ubuntu',
+                              fontWeight: FontWeight.bold,
+                              fontSize: 40,
+                              color: Color(0xFF442C3E),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => MyHomePage()));
+                    }),
+              ],
+            );
+          } else {
+            return Center(
+                child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Container(
                   height: MediaQuery.of(context).size.height * 0.2,
@@ -33,15 +99,13 @@ class _WelcomePageState extends State<WelcomePage> {
                   ),
                 ),
                 SizedBox(
-                  height: 25,
+                  height: MediaQuery.of(context).size.height * .1,
                 ),
-                Container(
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                GestureDetector(
                     child: Center(
                       child: Container(
-                        height: MediaQuery.of(context).size.height * 0.12,
-                        width: MediaQuery.of(context).size.width * 0.6,
+                        height: MediaQuery.of(context).size.height * 0.2,
+                        width: MediaQuery.of(context).size.width * 0.4,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(20),
@@ -54,117 +118,29 @@ class _WelcomePageState extends State<WelcomePage> {
                                 blurRadius: 15,
                                 offset: Offset(5, 3))
                           ],
-                          //   spreadRadius: 10,
-                          //     blurRadius: 15,
-                          //     offset: Offset(0, 7)),
                           color: Color(0xFFf7e1ed),
                         ),
                         child: Center(
-                          child: Padding(
-                            padding: const EdgeInsets.only(left: 30, right: 30),
-                            child: InkWell(
-                              child: Text(
-                                'Start Quiz',
-                                style: TextStyle(
-                                  fontFamily: 'Ubuntu',
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 40,
-                                  color: Color(0xFF442C3E),
-                                ),
-                              ),
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => MyHomePage()));
-                              },
+                          child: Text(
+                            'Start Quiz',
+                            style: TextStyle(
+                              fontFamily: 'Ubuntu',
+                              fontWeight: FontWeight.bold,
+                              fontSize: 40,
+                              color: Color(0xFF442C3E),
                             ),
                           ),
                         ),
                       ),
                     ),
-                  ),
-                ),
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => MyHomePage()));
+                    }),
               ],
-            );
-          } else {
-            return Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    height: MediaQuery.of(context).size.height * 0.2,
-                    width: MediaQuery.of(context).size.width * 0.7,
-                    child: Center(
-                      child: Text(
-                        'Test  your  programming  and  coding  skills  with  quizzes  and  prepare  yourself for  the  job  interview! ',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            fontFamily: 'Lato',
-                            letterSpacing: 1.3,
-                            color: Colors.white,
-                            fontSize: 23,
-                            fontWeight: FontWeight.w600),
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 25,
-                  ),
-                  Container(
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Center(
-                        child: Container(
-                          height: MediaQuery.of(context).size.height * 0.2,
-                          width: MediaQuery.of(context).size.width * 0.4,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.only(
-                              bottomLeft: Radius.circular(20),
-                              topRight: Radius.circular(20),
-                            ),
-                            boxShadow: [
-                              BoxShadow(
-                                  color: Color(0xFF442C3E).withOpacity(0.1),
-                                  spreadRadius: 10,
-                                  blurRadius: 15,
-                                  offset: Offset(5, 3))
-                            ],
-                            //   spreadRadius: 10,
-                            //     blurRadius: 15,
-                            //     offset: Offset(0, 7)),
-                            color: Color(0xFFf7e1ed),
-                          ),
-                          child: Center(
-                            child: Padding(
-                              padding:
-                                  const EdgeInsets.only(left: 30, right: 30),
-                              child: InkWell(
-                                child: Text(
-                                  'Start Quiz',
-                                  style: TextStyle(
-                                    fontFamily: 'Ubuntu',
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 40,
-                                    color: Color(0xFF442C3E),
-                                  ),
-                                ),
-                                onTap: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => MyHomePage()));
-                                },
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            );
+            ));
           }
         }));
   }
