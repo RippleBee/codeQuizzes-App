@@ -97,72 +97,6 @@ class _DevelopersPageState extends State<DevelopersPage> {
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.02,
                 ),
-                // Container(
-                //   height: 100,
-                //   child: Padding(
-                //     padding: const EdgeInsets.all(8.0),
-                //     child: ListTile(
-                //       leading: CircleAvatar(
-                //         radius: 30,
-                //         backgroundImage: AssetImage("images/arnob1.png"),
-                //       ),
-                //       title: Text(
-                //         "Arnob  Mahmud",
-                //         style: TextStyle(
-                //             fontFamily: "Ubuntu",
-                //             fontSize: 24,
-                //             fontWeight: FontWeight.bold,
-                //             color: Color(0xFF393949)),
-                //       ),
-                //       subtitle: Text(
-                //         "BSc in Textile Engineering, Bangladesh University of Textiles (BUTEX)",
-                //         style: TextStyle(
-                //           color: Color(0xFF440544),
-                //           fontFamily: "Kufam",
-                //           fontSize: 17,
-                //         ),
-                //       ),
-                //       trailing: IconButton(
-                //           icon: Icon(
-                //             Icons.message_outlined,
-                //             color: Color(0xFF504682),
-                //           ),
-                //           onPressed: () {}),
-                //     ),
-                //   ),
-                // ),
-                // Container(
-                //   child: Padding(
-                //     padding: const EdgeInsets.all(8.0),
-                //     child: ListTile(
-                //       leading: CircleAvatar(
-                //         radius: 30,
-                //         backgroundImage: AssetImage("images/munna.jpg"),
-                //       ),
-                //       title: Text(
-                //         "Fahim  Muntashir",
-                //         style: TextStyle(
-                //             fontFamily: "Ubuntu",
-                //             fontSize: 24,
-                //             fontWeight: FontWeight.bold,
-                //             color: Color(0xFF393949)),
-                //       ),
-                //       subtitle: Text(
-                //         "BSc in Computer Science and Engineering, North South University (NSU)",
-                //         style: TextStyle(
-                //             color: Color(0xFF440544),
-                //             fontFamily: "Kufam",
-                //             fontSize: 17),
-                //       ),
-                //       trailing: IconButton(
-                //           icon: Icon(
-                //             Icons.message_outlined,
-                //             color: Color(0xFF504682),
-                //           ),
-                //           onPressed: () {}),
-                //     ),
-                //   ),
-                // ),
                 Container(
                     child: Padding(
                   padding: const EdgeInsets.only(left: 30, right: 30),
@@ -249,7 +183,8 @@ class _DevelopersPageState extends State<DevelopersPage> {
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) => MyHomePage()));
-                            }),
+                            }
+                        ),
                       ),
                     ],
                   ),
@@ -305,76 +240,6 @@ class _DevelopersPageState extends State<DevelopersPage> {
                     ),
                   ),
                 ),
-                // Container(
-                //   height: 100,
-                //   child: Padding(
-                //     padding: const EdgeInsets.all(8.0),
-                //     child: ListTile(
-                //       leading: CircleAvatar(
-                //         radius: 30,
-                //         backgroundImage: AssetImage("images/arnob1.png"),
-                //       ),
-                //       title: Text(
-                //         "Arnob  Mahmud",
-                //         style: TextStyle(
-                //             fontFamily: "Ubuntu",
-                //             fontSize: 24,
-                //             fontWeight: FontWeight.bold,
-                //             color: Color(0xFF393949)),
-                //       ),
-                //       subtitle: Text(
-                //         "BSc in Textile Engineering, Bangladesh University of Textiles (BUTEX)",
-                //         style: TextStyle(
-                //           color: Color(0xFF440544),
-                //           fontFamily: "Kufam",
-                //           fontSize: 17,
-                //         ),
-                //       ),
-                //       trailing: IconButton(
-                //           icon: Icon(
-                //             Icons.message_outlined,
-                //             color: Color(0xFF504682),
-                //           ),
-                //           onPressed: () {}),
-                //     ),
-                //   ),
-                // ),
-                SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.02,
-                ),
-                // Container(
-                //   child: Padding(
-                //     padding: const EdgeInsets.all(8.0),
-                //     child: ListTile(
-                //       leading: CircleAvatar(
-                //         radius: 30,
-                //         backgroundImage: AssetImage("images/munna.jpg"),
-                //       ),
-                //       title: Text(
-                //         "Fahim  Muntashir",
-                //         style: TextStyle(
-                //             fontFamily: "Ubuntu",
-                //             fontSize: 24,
-                //             fontWeight: FontWeight.bold,
-                //             color: Color(0xFF393949)),
-                //       ),
-                //       subtitle: Text(
-                //         "BSc in Computer Science and Engineering, North South University (NSU)",
-                //         style: TextStyle(
-                //             color: Color(0xFF440544),
-                //             fontFamily: "Kufam",
-                //             fontSize: 17),
-                //       ),
-                //       trailing: IconButton(
-                //           icon: Icon(
-                //             Icons.message_outlined,
-                //             color: Color(0xFF504682),
-                //           ),
-                //           onPressed: () {}),
-                //     ),
-                //   ),
-                // ),
-
                 Container(
                     child: Padding(
                   padding: const EdgeInsets.only(left: 30, right: 30),
@@ -440,7 +305,9 @@ class _DevelopersPageState extends State<DevelopersPage> {
               ],
             );
           }
-        }));
+        }
+      )
+    );
   }
 }
 

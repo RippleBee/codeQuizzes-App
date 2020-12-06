@@ -72,7 +72,9 @@ class _MyHomePage extends State<MyHomePage> {
           } else {
             return landscape();
           }
-        }));
+        }
+      )
+    );
   }
 
   Widget landscape() {
@@ -149,7 +151,9 @@ class _MyHomePage extends State<MyHomePage> {
                   ),
                 ),
               ),
-            )));
+            )
+          )
+      );
   }
 
 // <<<==========   QUESTION BOX ==========>>>
@@ -186,7 +190,8 @@ class _MyHomePage extends State<MyHomePage> {
               fontWeight: FontWeight.bold,
             ),
           ),
-        )),
+        )
+       ),
       ),
     );
   }
@@ -261,6 +266,7 @@ class _MyHomePage extends State<MyHomePage> {
   }
 
 // <<<========== FALSE ANSWER  ==========>>>
+
   Container checkAnswerFalse(BuildContext context) {
     return Container(
       height: 40,
@@ -340,7 +346,8 @@ class _MyHomePage extends State<MyHomePage> {
                 fontSize: 20,
                 letterSpacing: 1,
                 fontFamily: 'Kufam',
-                fontWeight: FontWeight.w400)),
+                fontWeight: FontWeight.w400)
+            ),
       );
       Scaffold.of(context).showSnackBar(snackBar);
     } else {
